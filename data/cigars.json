@@ -1,0 +1,445 @@
+{
+  "cigars": [
+    {
+      "id": "cgr-0001",
+      "name": "El Septimo Culinary Art Spain Rioja",
+      "origin": "Costa Rica",
+      "factory": "El Septimo Geneva",
+      "size": { "length_in": 5.0, "ring_gauge": 54 },
+      "shape": "Robusto",
+      "aged": {
+        "is_aged": true,
+        "years": 5,
+        "notes": "Blend aged 5+ years. Culinary Art line inspired by iconic wine pairings."
+      },
+      "wrapper": "Undisclosed",
+      "binder": "Ecuador Habano 2004",
+      "filler": ["Dominican Republic", "Ecuador", "Nicaragua", "Brazil"],
+      "strength": "Medium-Mild",
+      "description": "A sophisticated release from the Culinary Art Collection, inspired by Spain’s Rioja wines. Elegant and structured, it delivers red fruit, cacao, cedar, mineral earth, sweet spice, and a velvety, wine-like finish.",
+      "smell_notes": ["Red fruit", "Cacao", "Cedar", "Sweet spice", "Mineral earth"],
+      "flavor_notes": ["Ripe red fruits", "Cacao", "Cedar", "Mineral earth", "Sweet spices", "Velvety red-wine finish"],
+      "pairing": {
+        "wine": ["Rioja Reserva", "Rioja Gran Reserva"],
+        "whiskey": ["Sherry-cask single malt Scotch"],
+        "rum": ["Aged rum with dried-fruit and cacao notes"],
+        "coffee": ["Espresso", "Dark roast"]
+      },
+      "tags": ["luxury", "culinary-collection", "wine-inspired", "rioja", "red-fruit", "cacao", "cedar", "velvety-finish", "pairing-friendly", "celebration"],
+      "image": "images/cigars/el-septimo-spain-rioja.jpg",
+      "active": true
+    },
+    {
+      "id": "cgr-0002",
+      "name": "Liga Privada Serie Unico Papas Fritas",
+      "origin": "Nicaragua",
+      "factory": "La Gran Fabrica Drew Estate",
+      "size": { "length_in": 4.5, "ring_gauge": 44 },
+      "shape": "Petit Corona",
+      "aged": {
+        "is_aged": true,
+        "years": null,
+        "notes": "Liga Privada tobaccos are extensively aged before rolling."
+      },
+      "wrapper": "Connecticut Broadleaf (USA)",
+      "binder": "Brazilian Mata Fina",
+      "filler": ["Nicaragua", "Honduras"],
+      "strength": "Full",
+      "description": "A compact powerhouse from Drew Estate’s Liga Privada Serie Unico line. Despite its smaller format, Papas Fritas delivers deep earthy character, rich leather, dark chocolate sweetness, and a vibrant spice finish.",
+      "smell_notes": ["Earth", "Leather", "Dark cocoa", "Pepper"],
+      "flavor_notes": ["Earth", "Deep leather", "Dark chocolate", "Black pepper", "Espresso"],
+      "pairing": {
+        "wine": ["Malbec", "Rioja Reserva"],
+        "whiskey": ["High-rye Bourbon", "Peated Scotch"],
+        "rum": ["Dark aged rum"],
+        "coffee": ["Dark roast", "Black espresso"]
+      },
+      "tags": ["compact-smoke", "full-bodied", "broadleaf", "earthy", "dark-chocolate", "leather", "quick-session"],
+      "image": "images/cigars/liga-privada-papas-fritas.jpg",
+      "active": true
+    },
+    {
+      "id": "cgr-0003",
+      "name": "El Rey del Mundo Natural Rectangulares",
+      "origin": "Honduras",
+      "factory": "HATSA (Honduras American Tobacco S.A.)",
+      "size": { "length_in": 5.6, "ring_gauge": 46 },
+      "shape": "Corona Box Pressed",
+      "aged": { "is_aged": false, "years": null, "notes": null },
+      "wrapper": "Ecuador Light Sumatra",
+      "binder": "Honduras",
+      "filler": ["Honduras", "Nicaragua"],
+      "strength": "Mild-Medium",
+      "description": "A budget-friendly box-pressed cigar handcrafted in Honduras. It delivers a smooth profile of cedar, light pepper, and subtle sweetness, making it an excellent everyday smoke.",
+      "smell_notes": ["Light wood", "Hay", "Subtle sweetness"],
+      "flavor_notes": ["Cedar", "Soft pepper", "Light caramel sweetness", "Toasted wood"],
+      "pairing": {
+        "wine": ["Merlot", "Light Tempranillo"],
+        "whiskey": ["Irish Whiskey", "Light Bourbon"],
+        "rum": ["Golden rum"],
+        "coffee": ["Medium roast", "Café con leche"]
+      },
+      "tags": ["budget-friendly", "box-pressed", "daily-smoke", "mild-medium", "approachable", "wood-forward"],
+      "image": "images/cigars/el-rey-del-mundo-rectangulares.jpg",
+      "active": true
+    },
+    {
+      "id": "cgr-0004",
+      "name": "Oliva Serie V 135th Anniversary Limited Edition",
+      "origin": "Nicaragua",
+      "factory": "Tabacalera Oliva de Nicaragua S.A. (TABOLISA)",
+      "size": { "length_in": 5.75, "ring_gauge": 54 },
+      "shape": "Perfecto",
+      "aged": {
+        "is_aged": true,
+        "years": null,
+        "notes": "Limited anniversary release using the Serie V blend."
+      },
+      "wrapper": "Ecuadorian Habano",
+      "binder": "Nicaragua",
+      "filler": ["Nicaragua"],
+      "strength": "Medium-Full",
+      "description": "Released to honor Melanio Oliva’s legacy, this limited Perfecto highlights the bold Serie V blend in a format that enhances complexity. Expect rich spice, dark cocoa, coffee notes, and balanced Nicaraguan strength with refined construction.",
+      "smell_notes": ["Dark cocoa", "Earth", "Pepper", "Coffee"],
+      "flavor_notes": ["Dark chocolate", "Black pepper", "Espresso", "Leather", "Spice"],
+      "pairing": {
+        "wine": ["Cabernet Sauvignon", "Rioja Reserva"],
+        "whiskey": ["Aged Bourbon", "Nicaraguan rum-cask whiskey"],
+        "rum": ["Aged Nicaraguan rum"],
+        "coffee": ["Espresso", "Dark roast"]
+      },
+      "tags": ["limited-edition", "perfecto", "nicaraguan", "spice-forward", "anniversary-release", "complex"],
+      "image": "images/cigars/oliva-serie-v-135.jpg",
+      "active": true
+    }
+	{
+	"id": "cgr-0005",
+	"name": "Macanudo Vintage 1997 Maduro Toro",
+	"origin": "Dominican Republic",
+	"factory": "General Cigar Company",
+	"size": {
+		"length_in": 6.0,
+		"ring_gauge": 54
+	},
+	"shape": "Toro",
+	"aged": {
+		"is_aged": true,
+		"years": null,
+		"notes": "Features a Connecticut Broadleaf wrapper from the 1997 crop."
+	},
+	"wrapper": "Connecticut Broadleaf Maduro",
+	"binder": "Honduras",
+	"filler": ["Brazil", "Dominican Republic", "Nicaragua"],
+	"strength": "Medium-Full",
+	"description": "Part of the Macanudo Vintage series, this Toro showcases a 1997 Connecticut Broadleaf Maduro wrapper over a complex blend of Brazilian, Dominican, and Nicaraguan fillers. Rich and refined, it delivers dark chocolate, espresso, earth, and subtle spice with smooth construction and an even burn.",
+	"smell_notes": ["Dark cocoa", "Earth", "Sweet tobacco", "Espresso"],
+	"flavor_notes": ["Dark chocolate", "Espresso", "Earth", "Cedar", "Subtle spice"],
+	"pairing": {
+		"wine": ["Port", "Bold red blend"],
+		"whiskey": ["Rye whiskey", "Port-cask finished whiskey"],
+		"rum": ["Aged rum"],
+		"coffee": ["Dark roast", "Espresso"]
+	},
+	"tags": ["maduro", "medium-full", "broadleaf", "vintage-wrapper", "toro", "rich", "classic"],
+	"image": "images/cigars/macanudo-vintage-1997-maduro-toro.jpg",
+	"active": true
+	}
+	{
+	"id": "cgr-0006",
+	"name": "Romeo y Julieta Media Noche Robusto",
+	"origin": "Dominican Republic",
+	"factory": "UNK",
+	"size": {
+		"length_in": 5.0,
+		"ring_gauge": 54
+	},
+	"shape": "Robusto",
+	"aged": {
+		"is_aged": true,
+		"years": null,
+		"notes": "Dominican long-fillers are described as extensively aged."
+	},
+	"wrapper": "Mexico San Andres Maduro",
+	"binder": "Dominican Republic",
+	"filler": ["Dominican Republic"],
+	"strength": "Medium-Full",
+	"description": "A dark, naturally fermented San Andrés Maduro-wrapped Romeo y Julieta that leans bold and spicy. Expect roasted nuts and coffee up front, black pepper through the core, and a honeyed sweetness on the finish.",
+	"smell_notes": ["Dark cocoa", "Roasted nuts", "Coffee", "Black pepper"],
+	"flavor_notes": ["Nuts", "Coffee", "Black pepper", "Honey"],
+	"pairing": {
+		"wine": ["Port", "Bold red blend"],
+		"whiskey": ["Manhattan (rye-based)", "Rye whiskey"],
+		"rum": ["Aged rum"],
+		"coffee": ["Espresso", "Dark roast"]
+	},
+	"tags": ["maduro", "san-andres", "medium-full", "coffee-notes", "peppery", "sweet-finish", "evening-smoke"],
+	"image": "images/cigars/romeo-y-julieta-media-noche-robusto.jpg",
+	"active": true
+	}
+	{
+  "id": "cgr-0007",
+  "name": "La Flor Dominicana Andalusian Bull",
+  "origin": "Dominican Republic",
+  "factory": "Tabacalera La Flor S.R.L.",
+  "size": {
+    "length_in": 6.5,
+    "ring_gauge": 64
+  },
+  "shape": "Salomon",
+  "aged": {
+    "is_aged": true,
+    "years": null,
+    "notes": "Crafted using estate-grown Dominican tobaccos from Litto Gomez’s farm."
+  },
+  "wrapper": "Ecuadorian Corojo",
+  "binder": "Dominican Republic",
+  "filler": [
+    "Dominican Republic"
+  ],
+  "strength": "Medium-Full",
+  "description": "Awarded #1 Cigar of the Year by Cigar Aficionado, the Andalusian Bull is a bold Salomon-shaped masterpiece inspired by Andalusian bullfighting tradition. Featuring an Ecuadorian Corojo wrapper over estate-grown Dominican tobaccos, it delivers a rich, evolving profile with leather, anise, cedar, earth, sweet spices, and toasted almond.",
+  "smell_notes": [
+    "Leather",
+    "Sweet spice",
+    "Cedar",
+    "Earth"
+  ],
+  "flavor_notes": [
+    "Cured leather",
+    "Anise",
+    "Sweet spices",
+    "Cedar wood",
+    "Fresh earth",
+    "Toasted almond"
+  ],
+  "pairing": {
+    "wine": [
+      "Rioja Gran Reserva",
+      "Cabernet Sauvignon"
+    ],
+    "whiskey": [
+      "Aged Bourbon",
+      "Sherry-cask single malt"
+    ],
+    "rum": [
+      "Aged Dominican rum"
+    ],
+    "coffee": [
+      "Dark roast",
+      "Café Cubano"
+    ]
+  },
+  "tags": [
+    "award-winning",
+    "cigar-aficionado-1",
+    "salomon",
+    "estate-grown",
+    "dominican",
+    "complex",
+    "medium-full",
+    "celebration",
+    "slow-smoke"
+  ],
+  "image": "images/cigars/la-flor-dominicana-andalusian-bull.jpg",
+  "active": true
+}
+{
+  "id": "cgr-0008",
+  "name": "Padron 1964 Anniversary Series Torpedo Natural",
+  "origin": "Nicaragua",
+  "factory": "Tabacos Cubanica S.A.",
+  "size": {
+    "length_in": 6.0,
+    "ring_gauge": 50
+  },
+  "shape": "Torpedo (Box-Pressed)",
+  "aged": {
+    "is_aged": true,
+    "years": 4,
+    "notes": "All tobaccos aged a minimum of four years before production."
+  },
+  "wrapper": "Nicaraguan Natural",
+  "binder": "Nicaragua",
+  "filler": [
+    "Nicaragua"
+  ],
+  "strength": "Full",
+  "description": "Introduced in 1994 to celebrate Padron’s 30th anniversary, the 1964 Anniversary Series Torpedo Natural is a box-pressed classic crafted entirely from Nicaraguan tobaccos aged four years. Rich, refined, and impeccably constructed, it delivers layered complexity with balance and power.",
+  "smell_notes": [
+    "Cocoa",
+    "Earth",
+    "Sweet tobacco",
+    "Cedar"
+  ],
+  "flavor_notes": [
+    "Dark cocoa",
+    "Roasted coffee",
+    "Earth",
+    "Sweet spice",
+    "Cedar",
+    "Creamy finish"
+  ],
+  "pairing": {
+    "wine": [
+      "Cabernet Sauvignon",
+      "Bordeaux blend"
+    ],
+    "whiskey": [
+      "Aged Bourbon",
+      "High-proof Nicaraguan rum-cask whiskey"
+    ],
+    "rum": [
+      "Aged Nicaraguan rum"
+    ],
+    "coffee": [
+      "Espresso",
+      "Dark roast"
+    ]
+  },
+  "tags": [
+    "anniversary-series",
+    "box-pressed",
+    "nicaraguan-puro",
+    "full-bodied",
+    "award-winning",
+    "classic",
+    "complex",
+    "premium"
+  ],
+  "image": "images/cigars/padron-1964-anniversary-torpedo-natural.jpg",
+  "active": true
+}
+{
+  "id": "cgr-0009",
+  "name": "Arturo Fuente Double Chateau Fuente Natural",
+  "origin": "Dominican Republic",
+  "factory": "Tabacalera A. Fuente y Cia",
+  "size": {
+    "length_in": 6.75,
+    "ring_gauge": 50
+  },
+  "shape": "Toro",
+  "aged": {
+    "is_aged": true,
+    "years": null,
+    "notes": "Aged in Spanish cedar vaults for optimal blend marriage."
+  },
+  "wrapper": "African Cameroon",
+  "binder": "Dominican Republic",
+  "filler": [
+    "Dominican Republic"
+  ],
+  "strength": "Mild-Medium",
+  "description": "A classic from the Fuente family, the Double Chateau Fuente Natural showcases a smooth African Cameroon wrapper over Dominican binder and long-fillers. Aged in Spanish cedar vaults, it delivers a refined medium-bodied profile with nutty depth and subtle spice throughout a well-balanced, elegant smoke.",
+  "smell_notes": [
+    "Cedar",
+    "Sweet tobacco",
+    "Light spice",
+    "Nuts"
+  ],
+  "flavor_notes": [
+    "Toasted nuts",
+    "Cedar",
+    "Soft spice",
+    "Creamy tobacco",
+    "Subtle sweetness"
+  ],
+  "pairing": {
+    "wine": [
+      "Pinot Noir",
+      "Light Rioja"
+    ],
+    "whiskey": ["Irish Whiskey", "Light Bourbon"],
+    "rum": [
+      "Aged light rum"
+    ],
+    "coffee": [
+      "Medium roast",
+      "Café con leche"
+    ]
+  },
+  "tags": [
+    "cameroon-wrapper",
+    "mild-medium",
+    "cedar-aged",
+    "classic",
+    "dominican",
+    "refined",
+    "balanced",
+    "toro"
+  ],
+  "image": "images/cigars/arturo-fuente-double-chateau-natural.jpg",
+  "active": true
+}
+{
+  "id": "cgr-0010",
+  "name": "El Septimo Culinary Arts Collection Bordeaux",
+  "origin": "Costa Rica",
+  "factory": "El Septimo Geneva",
+  "size": {
+    "length_in": 6.0,
+    "ring_gauge": 60
+  },
+  "shape": "Toro Gordo",
+  "aged": {
+    "is_aged": true,
+    "years": null,
+    "notes": "Blend includes five premium tobaccos, two aged in Bordeaux wine barrels using proprietary aging techniques."
+  },
+  "wrapper": "Connecticut",
+  "binder": "Habano 2000",
+  "filler": [
+    "Dominican Republic",
+    "Ecuador",
+    "Nicaragua",
+    "Brazil"
+  ],
+  "strength": "Mild-Medium",
+  "description": "Part of El Septimo’s Culinary Arts Collection, the Bordeaux is inspired by the elegance of French Grand Cru wines. Featuring a five-tobacco blend with two leaves aged in Bordeaux barrels, this Toro Gordo delivers layered complexity with refined wine notes, soft spice, moist earth, and roasted nuts. Recognized by Robb Report as one of the top cigars of 2024, it represents the fusion of enology and premium tobacco craftsmanship.",
+  "smell_notes": [
+    "Red wine",
+    "Soft spice",
+    "Moist earth",
+    "Sweet tobacco"
+  ],
+  "flavor_notes": [
+    "Red wine notes",
+    "Mild spice",
+    "Earth",
+    "Roasted nuts",
+    "Creamy finish"
+  ],
+  "pairing": {
+    "wine": [
+      "Bordeaux Grand Cru Classé",
+      "Château Lynch-Bages"
+    ],
+    "whiskey": [
+      "Cognac Fine Champagne",
+      "Spiced XO rum"
+    ],
+    "rum": [
+      "XO aged rum"
+    ],
+    "coffee": [
+      "Medium roast",
+      "French press"
+    ]
+  },
+  "tags": [
+    "culinary-collection",
+    "wine-barrel-aged",
+    "bordeaux-inspired",
+    "luxury",
+    "mild-medium",
+    "toro-gordo",
+    "complex",
+    "award-winning",
+    "celebration"
+  ],
+  "image": "images/cigars/el-septimo-bordeaux.jpg",
+  "active": true
+}
+	
+  ]
+}
