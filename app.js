@@ -488,7 +488,7 @@ function renderLearn() {
   });
 }
 
-function renderLearnAnatomy() {
+/*function renderLearnAnatomy() {
   root.innerHTML = shell({
     title: "Cigar Anatomy",
     subtitle: "The three core components of every premium cigar.",
@@ -516,7 +516,210 @@ function renderLearnAnatomy() {
       </div>
     `,
   });
+}*/
+//--------New developed Learn Anartomy Section
+function renderLearnAnatomy() {
+  root.innerHTML = shell({
+    title: "Cigar Anatomy",
+    subtitle: "A practical breakdown of what a cigar is made of — and why each part changes the smoke.",
+    content: `
+      <div class="max-w-4xl space-y-6">
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">At a glance</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Every premium cigar is built from three core tobacco components —
+            <span class="text-brand-text">wrapper</span>, <span class="text-brand-text">binder</span>, and <span class="text-brand-text">filler</span>.
+            On top of that, the cigar has physical features (cap, head, foot, seam) that influence the
+            <span class="text-brand-text">draw</span>, <span class="text-brand-text">burn</span>, and overall experience.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            ${learnFact("Wrapper", "Flavor & aroma influence, burn quality, appearance")}
+            ${learnFact("Binder", "Structure, burn stability, supports the blend")}
+            ${learnFact("Filler", "Strength, complexity, core flavor profile")}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Simple anatomy map</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            (Text diagram for now — you can swap in an image later.)
+          </p>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-5 text-sm text-brand-muted leading-relaxed">
+            <div class="font-medium text-brand-text">Head / Cap</div>
+            <div>• Where you cut. Cap is the small “patch” leaf that seals the wrapper.</div>
+            <div class="mt-3 font-medium text-brand-text">Body</div>
+            <div>• The main length of the cigar. Wrapper + binder around the filler.</div>
+            <div class="mt-3 font-medium text-brand-text">Foot</div>
+            <div>• The open end you light. Exposes filler directly at first light.</div>
+            <div class="mt-3 font-medium text-brand-text">Seam</div>
+            <div>• The spiral line where the wrapper overlaps.</div>
+            <div class="mt-3 font-medium text-brand-text">Shoulder</div>
+            <div>• The curved area under the cap near the head (important for clean cuts).</div>
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Wrapper</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            The wrapper is the outermost leaf. It’s selected for appearance, elasticity, and burn quality —
+            but it also plays a major role in aroma and perceived flavor.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("What it influences", [
+              "Aroma (especially on the cold draw and first third)",
+              "Burn evenness and ash integrity",
+              "Sweetness/spice notes depending on fermentation and leaf type"
+            ])}
+            ${learnBulletBox("Common misconceptions", [
+              "Dark wrapper does not automatically mean stronger nicotine",
+              "Light wrapper doesn’t always mean “no flavor”",
+              "Color is affected by fermentation/aging, not just strength"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Pro tip:</span>
+            If the wrapper feels overly dry or has many cracks/tears, the cigar may burn hot or uneven.
+            If it feels slightly oily and supple, it often burns slower and smoother.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Binder</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            The binder leaf sits underneath the wrapper and holds the filler together.
+            Most of the time it plays a supporting role, but a strong binder can absolutely add spice or earthiness.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Why it matters", [
+              "Helps control burn rate",
+              "Adds structural integrity (prevents unraveling)",
+              "Can contribute secondary flavor (often earth/spice)"
+            ])}
+            ${learnBulletBox("What to look for", [
+              "If a cigar tunnels/canoes a lot, the binder/filler combustion may be uneven",
+              "If the cigar feels soft and airy, the bunching (filler + binder) may be loose",
+              "If it feels rock hard, draw may be tight"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Filler</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            The filler is the internal blend — the main driver of strength, complexity, and how flavors evolve through the thirds.
+            Premium cigars often use <span class="text-brand-text">long filler</span> (whole leaves),
+            while budget cigars may use <span class="text-brand-text">short filler</span> (chopped tobacco).
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Long filler vs short filler", [
+              "Long filler: better airflow, more consistent burn, more complexity",
+              "Short filler: can burn faster, may taste flatter, more prone to bitterness if overheated",
+              "Hand-rolled long filler is typical for premium cigars"
+            ])}
+            ${learnBulletBox("Strength & complexity", [
+              "Nicotine impact is mostly filler-driven",
+              "Blending different origins creates layered flavors",
+              "Aging reduces harshness and adds smoothness"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Cap, head, foot, and your cut</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            The cut affects draw more than most people realize. Too shallow and it’s tight; too aggressive and the wrapper can unravel.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Cap & shoulder", [
+              "Cap is the small piece that seals the wrapper at the head",
+              "Shoulder is the curved portion below the cap",
+              "Cut just above the shoulder for a clean draw"
+            ])}
+            ${learnBulletBox("Foot", [
+              "Foot exposes filler directly — first light can be stronger/peppery",
+              "Toasting slowly reduces harshness",
+              "If it tastes bitter early, slow down and avoid overheating"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Quick glossary</h2>
+          <div class="mt-4 grid md:grid-cols-2 gap-3 text-sm">
+            ${learnGloss("Draw", "How easily air moves through the cigar when you puff.")}
+            ${learnGloss("Burn line", "The ring where the cigar is actively combusting.")}
+            ${learnGloss("Canoeing", "One side burns faster than the other (often from wind or uneven combustion).")}
+            ${learnGloss("Tunneling", "Center burns faster than the wrapper (can be humidity or construction).")}
+            ${learnGloss("Bunch", "The filler leaves bundled together before binder/wrapper are applied.")}
+            ${learnGloss("Retrohale", "Letting smoke exit through the nose for extra aroma perception.")}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">What to notice while smoking</h2>
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Construction checks", [
+              "Even burn line (minor waves are normal)",
+              "Consistent draw (not too tight, not too open)",
+              "Smoke output feels steady, not thin or hot"
+            ])}
+            ${learnBulletBox("Taste checks", [
+              "First third often shows wrapper + toasted filler",
+              "Second third is where the blend usually “settles”",
+              "Final third can intensify — slow down to avoid bitterness"
+            ])}
+          </div>
+
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+            <span class="text-brand-muted text-sm">•</span>
+            <a href="#/database" class="text-sm text-brand-gold hover:underline">Explore cigars in the Database →</a>
+          </div>
+        </div>
+
+      </div>
+    `,
+  });
 }
+
+// ---- small helpers used by the anatomy page ----
+function learnFact(title, desc) {
+  return `
+    <div class="rounded-2xl border border-brand-border bg-brand-bg p-4">
+      <div class="text-sm font-medium text-brand-text">${escapeHtml(title)}</div>
+      <div class="mt-1 text-xs text-brand-muted">${escapeHtml(desc)}</div>
+    </div>
+  `;
+}
+
+function learnBulletBox(title, bullets) {
+  return `
+    <div class="rounded-2xl border border-brand-border bg-brand-bg p-4">
+      <div class="text-sm font-medium text-brand-text">${escapeHtml(title)}</div>
+      <ul class="mt-2 space-y-1 text-xs text-brand-muted">
+        ${bullets.map(b => `<li>• ${escapeHtml(b)}</li>`).join("")}
+      </ul>
+    </div>
+  `;
+}
+
+function learnGloss(term, definition) {
+  return `
+    <div class="rounded-2xl border border-brand-border bg-brand-bg p-4">
+      <div class="text-sm font-medium text-brand-text">${escapeHtml(term)}</div>
+      <div class="mt-1 text-xs text-brand-muted">${escapeHtml(definition)}</div>
+    </div>
+  `;
+}
+//------------END of Learn Anatomy---------
 
 function renderLearnWrappers() {
   root.innerHTML = shell({
