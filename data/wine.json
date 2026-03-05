@@ -1,0 +1,279 @@
+{
+  "wines": [
+    {
+      "id": "wine-0001",
+      "name": "Marqués de Riscal Rioja Reserva",
+      "brand": "Marqués de Riscal",
+      "winery": "Herederos del Marqués de Riscal",
+      "origin": {
+        "country": "Spain",
+        "region": "Rioja"
+      },
+      "category": "Red Wine",
+      "grape": ["Tempranillo", "Graciano"],
+      "abv": 14,
+      "aged_years": 2,
+      "cask_finish": "American Oak",
+      "description": "A classic Rioja Reserva offering elegant red fruit, subtle vanilla, and oak spice with a smooth, structured body.",
+      "smell_notes": [
+        "Red berries",
+        "Vanilla",
+        "Oak",
+        "Leather"
+      ],
+      "palate_notes": [
+        "Cherry",
+        "Plum",
+        "Sweet spice",
+        "Cedar"
+      ],
+      "finish_notes": [
+        "Smooth tannins",
+        "Oak",
+        "Lingering fruit"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["medium-full", "complex", "wine-inspired"],
+        "cigar_tags_all": [],
+        "notes": "Excellent with cigars that have cedar, spice, and red fruit notes."
+      },
+      "tags": [
+        "rioja",
+        "tempranillo",
+        "oak-aged-red",
+        "medium-body",
+        "balanced",
+        "classic"
+      ],
+      "image": "images/wine/marques-de-riscal-rioja.jpg",
+      "active": true
+    },
+    {
+      "id": "wine-0002",
+      "name": "Catena Malbec",
+      "brand": "Catena",
+      "winery": "Bodega Catena Zapata",
+      "origin": {
+        "country": "Argentina",
+        "region": "Mendoza"
+      },
+      "category": "Red Wine",
+      "grape": ["Malbec"],
+      "abv": 13.5,
+      "aged_years": 1,
+      "cask_finish": "French Oak",
+      "description": "A rich Argentine Malbec with dark fruit intensity, chocolate notes, and smooth tannins.",
+      "smell_notes": [
+        "Blackberry",
+        "Plum",
+        "Violet"
+      ],
+      "palate_notes": [
+        "Dark fruit",
+        "Chocolate",
+        "Vanilla",
+        "Oak"
+      ],
+      "finish_notes": [
+        "Velvety",
+        "Fruit-forward",
+        "Soft spice"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["maduro", "full-bodied", "dark-chocolate"],
+        "cigar_tags_all": [],
+        "notes": "Dark fruit and chocolate complement bold cigars."
+      },
+      "tags": [
+        "malbec",
+        "bold-red",
+        "dark-fruit",
+        "full-body",
+        "smooth"
+      ],
+      "image": "images/wine/catena-malbec.jpg",
+      "active": true
+    },
+    {
+      "id": "wine-0003",
+      "name": "Robert Mondavi Cabernet Sauvignon",
+      "brand": "Robert Mondavi",
+      "winery": "Robert Mondavi Winery",
+      "origin": {
+        "country": "United States",
+        "region": "Napa Valley"
+      },
+      "category": "Red Wine",
+      "grape": ["Cabernet Sauvignon"],
+      "abv": 14.5,
+      "aged_years": 2,
+      "cask_finish": "French Oak",
+      "description": "A structured Napa Cabernet Sauvignon with bold tannins and deep dark fruit complexity.",
+      "smell_notes": [
+        "Black currant",
+        "Oak",
+        "Cedar"
+      ],
+      "palate_notes": [
+        "Blackberry",
+        "Chocolate",
+        "Tobacco",
+        "Vanilla"
+      ],
+      "finish_notes": [
+        "Long",
+        "Bold tannins",
+        "Oak"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["full-bodied", "complex", "celebration"],
+        "cigar_tags_all": [],
+        "notes": "Strong structure works with powerful cigars."
+      },
+      "tags": [
+        "cabernet",
+        "bold-red",
+        "oak-aged-red",
+        "full-body",
+        "structured"
+      ],
+      "image": "images/wine/robert-mondavi-cabernet.jpg",
+      "active": true
+    },
+    {
+      "id": "wine-0004",
+      "name": "Muga Rioja Reserva",
+      "brand": "Bodegas Muga",
+      "winery": "Bodegas Muga",
+      "origin": {
+        "country": "Spain",
+        "region": "Rioja"
+      },
+      "category": "Red Wine",
+      "grape": ["Tempranillo", "Garnacha", "Graciano"],
+      "abv": 14,
+      "aged_years": 2,
+      "cask_finish": "French Oak",
+      "description": "An elegant Rioja Reserva with layered fruit, leather, and oak spice complexity.",
+      "smell_notes": [
+        "Red fruit",
+        "Leather",
+        "Vanilla"
+      ],
+      "palate_notes": [
+        "Cherry",
+        "Plum",
+        "Oak",
+        "Spice"
+      ],
+      "finish_notes": [
+        "Balanced",
+        "Smooth tannins",
+        "Lingering spice"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["complex", "cedar", "wine-inspired"],
+        "cigar_tags_all": [],
+        "notes": "A natural companion for refined cigars."
+      },
+      "tags": [
+        "rioja",
+        "tempranillo",
+        "oak-aged-red",
+        "medium-body",
+        "complex"
+      ],
+      "image": "images/wine/muga-rioja-reserva.jpg",
+      "active": true
+    },
+    {
+      "id": "wine-0005",
+      "name": "Beringer Private Reserve Cabernet Sauvignon",
+      "brand": "Beringer",
+      "winery": "Beringer Vineyards",
+      "origin": {
+        "country": "United States",
+        "region": "Napa Valley"
+      },
+      "category": "Red Wine",
+      "grape": ["Cabernet Sauvignon"],
+      "abv": 15,
+      "aged_years": 2,
+      "cask_finish": "French Oak",
+      "description": "A powerful Napa Cabernet Sauvignon with intense dark fruit, chocolate, and long tannic finish.",
+      "smell_notes": [
+        "Blackberry",
+        "Oak",
+        "Dark chocolate"
+      ],
+      "palate_notes": [
+        "Black currant",
+        "Chocolate",
+        "Spice"
+      ],
+      "finish_notes": [
+        "Long",
+        "Bold",
+        "Structured"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["full-bodied", "maduro", "complex"],
+        "cigar_tags_all": [],
+        "notes": "Powerful wines match strong cigars."
+      },
+      "tags": [
+        "cabernet",
+        "bold-red",
+        "full-body",
+        "luxury",
+        "oak-aged-red"
+      ],
+      "image": "images/wine/beringer-private-reserve.jpg",
+      "active": true
+    },
+    {
+      "id": "wine-0006",
+      "name": "Casillero del Diablo Carmenere",
+      "brand": "Concha y Toro",
+      "winery": "Concha y Toro",
+      "origin": {
+        "country": "Chile",
+        "region": "Central Valley"
+      },
+      "category": "Red Wine",
+      "grape": ["Carmenere"],
+      "abv": 13.5,
+      "aged_years": 1,
+      "cask_finish": "Oak",
+      "description": "A smooth Chilean Carmenere offering dark berries, pepper spice, and subtle oak complexity.",
+      "smell_notes": [
+        "Blackberry",
+        "Pepper",
+        "Spice"
+      ],
+      "palate_notes": [
+        "Dark fruit",
+        "Chocolate",
+        "Soft spice"
+      ],
+      "finish_notes": [
+        "Smooth",
+        "Fruit-forward"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["medium-full", "spice-forward", "earthy"],
+        "cigar_tags_all": [],
+        "notes": "Pepper and fruit complement spicy cigars."
+      },
+      "tags": [
+        "carmenere",
+        "medium-body",
+        "dark-fruit",
+        "spicy",
+        "balanced"
+      ],
+      "image": "images/wine/casillero-del-diablo-carmenere.jpg",
+      "active": true
+    }
+  ]
+}
