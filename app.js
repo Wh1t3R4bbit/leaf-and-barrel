@@ -34,6 +34,8 @@ const routes = {
   "learn/anatomy": renderLearnAnatomy,
   "learn/wrappers": renderLearnWrappers,
   "learn/shapes": renderLearnShapes,
+  "learn/strength": renderLearnStrength,
+  "learn/making": renderLearnMaking,
 };
 
 function viewFromHash() {
@@ -1060,6 +1062,40 @@ function vitolaCard(name, size, summary, bullets) {
       </ul>
     </div>
   `;
+}
+
+function renderLearnStrength() {
+  root.innerHTML = shell({
+    title: "Strength & Flavor",
+    subtitle: "Coming next — we’ll break down nicotine vs body vs flavor intensity.",
+    content: `
+      <div class="lb-card p-6 max-w-3xl">
+        <p class="text-sm text-brand-muted">
+          This page is not written yet — but the route works. ✅
+        </p>
+        <div class="mt-4">
+          <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+        </div>
+      </div>
+    `
+  });
+}
+
+function renderLearnMaking() {
+  root.innerHTML = shell({
+    title: "How Cigars Are Made",
+    subtitle: "Coming next — from seed to humidor.",
+    content: `
+      <div class="lb-card p-6 max-w-3xl">
+        <p class="text-sm text-brand-muted">
+          This page is not written yet — but the route works. ✅
+        </p>
+        <div class="mt-4">
+          <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+        </div>
+      </div>
+    `
+  });
 }
 // -------------------- UI blocks --------------------
 function filterBlock(title, key, items) {
