@@ -294,7 +294,7 @@ function renderDatabase() {
     subtitle: `Showing ${filtered.length} of ${all.length} cigars`,
     content: `
       <div class="grid lg:grid-cols-12 gap-6">
-        <aside class="lg:col-span-3 lb-card p-5 h-fit sticky top-24">
+        <aside class="lg:col-span-3 lb-card p-5 h-fit lg:sticky lg:top-24">
           <div class="flex items-center justify-between">
             <h2 class="font-medium">Filters</h2>
             <button id="reset-filters" class="text-xs text-brand-muted hover:text-brand-text">Reset</button>
