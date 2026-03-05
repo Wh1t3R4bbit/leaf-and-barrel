@@ -951,6 +951,160 @@ function renderLearnWrappers() {
   });
 }
 //----------End of Improved Learn Wrapper Section----------------
+//----------------New Shapes Section---------------------
+function renderLearnShapes() {
+  root.innerHTML = shell({
+    title: "Shapes & Sizes (Vitolas)",
+    subtitle: "How length and ring gauge change flavor, heat, and burn — plus the shapes you’ll see most often.",
+    content: `
+      <div class="max-w-4xl space-y-6">
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Key terms (in plain English)</h2>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-3 text-sm">
+            ${learnGloss("Vitola", "The cigar’s shape + size category (e.g., Robusto, Toro, Churchill).")}
+            ${learnGloss("Length", "Measured in inches. Longer cigars typically take more time and can develop more slowly.")}
+            ${learnGloss("Ring Gauge", "The cigar’s diameter. Measured in 64ths of an inch (e.g., 50 = 50/64”).")}
+            ${learnGloss("Parejo vs Figurado", "Parejo = straight sides. Figurado = shaped (tapered/bulged).")}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Quick math:</span>
+            Ring gauge 50 = 50/64 inch ≈ 0.78". Bigger ring gauge = thicker cigar.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">How size changes the experience</h2>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Thicker cigars (higher ring gauge) often", [
+              "Burn a bit cooler (more tobacco mass, slower heat build-up)",
+              "Highlight the filler blend (less wrapper influence per puff)",
+              "Feel smoother, especially if smoked slowly"
+            ])}
+
+            ${learnBulletBox("Thinner cigars (lower ring gauge) often", [
+              "Taste more wrapper-forward (wrapper is a larger % of the smoke)",
+              "Feel more concentrated and intense",
+              "Can overheat faster if you puff too quickly"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Practical tip:</span>
+            If a cigar tastes bitter, it’s often heat. Slow your cadence first before blaming the blend.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Parejo (straight-sided) classics</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Parejos are the most common and most consistent shapes. Great for learning because burn behavior is predictable.
+          </p>
+
+          <div class="mt-5 grid md:grid-cols-2 gap-4 text-sm">
+            ${vitolaCard("Robusto", `~5" × 50`, "Short, satisfying, and popular. Great for 45–75 minutes.", [
+              "Balanced wrapper/filler influence",
+              "Easy to smoke without overheating",
+              "A go-to “baseline” vitola"
+            ])}
+
+            ${vitolaCard("Toro", `~6" × 52`, "More time and evolution than a Robusto. Very common.", [
+              "Often smoother than thinner sizes",
+              "Better for noticing transitions",
+              "Great with whiskey or rum"
+            ])}
+
+            ${vitolaCard("Churchill", `~7" × 48`, "Long session cigar with slow development.", [
+              "Can evolve more gradually",
+              "Great when you want a long, steady smoke",
+              "Needs patience and slow cadence"
+            ])}
+
+            ${vitolaCard("Corona", `~5.5" × 42`, "Classic size that can feel more focused and wrapper-driven.", [
+              "Often more “concentrated” flavor",
+              "Can burn faster/hotter if rushed",
+              "Great for tasting wrapper character"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Figurado (shaped) favorites</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Figurados are shaped cigars. They can be incredibly rewarding, but they’re a bit more sensitive to lighting and technique.
+          </p>
+
+          <div class="mt-5 grid md:grid-cols-2 gap-4 text-sm">
+            ${vitolaCard("Torpedo", `~6" × 52 (varies)`, "Pointed head concentrates smoke and can intensify flavor.", [
+              "Cut carefully (don’t overcut)",
+              "Great for concentrated draws",
+              "Feels more “focused” than a Toro"
+            ])}
+
+            ${vitolaCard("Belicoso", `~5.5" × 52 (varies)`, "A softer taper than a torpedo. Forgiving but still focused.", [
+              "Easy to cut in stages",
+              "Often a great “upgrade” from Toro",
+              "Good balance of comfort + concentration"
+            ])}
+
+            ${vitolaCard("Perfecto", `varies`, "Tapered at both ends. Can start strong and then settle.", [
+              "Toast slowly for best start",
+              "Construction quality matters",
+              "Often very complex when well-made"
+            ])}
+
+            ${vitolaCard("Salomon", `~6.5–7.5” × big`, "Large, dramatic, slow-burning figurado.", [
+              "Long, evolving smoke",
+              "Best for special occasions",
+              "Requires slow cadence"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Choosing the right size (fast guide)</h2>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Pick a Robusto if…", [
+              "You want a reliable, balanced experience",
+              "You’re learning a new brand/blend",
+              "You want a 1-hour-ish session"
+            ])}
+
+            ${learnBulletBox("Pick a Toro/Churchill if…", [
+              "You want slower evolution and more transitions",
+              "You’ll be smoking longer and relaxing",
+              "You prefer a slightly cooler, smoother feel"
+            ])}
+
+            ${learnBulletBox("Pick a Corona/Lancero if…", [
+              "You want wrapper-forward flavor",
+              "You enjoy more intensity and focus",
+              "You’re comfortable with a slower cadence (to avoid heat)"
+            ])}
+
+            ${learnBulletBox("Pick a Figurado if…", [
+              "You want something special/complex",
+              "You’re okay with needing a careful light and cut",
+              "You like concentrated draws and evolving structure"
+            ])}
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+            <span class="text-brand-muted text-sm">•</span>
+            <a href="#/database" class="text-sm text-brand-gold hover:underline">Explore cigars by shape in the Database →</a>
+          </div>
+        </div>
+
+      </div>
+    `,
+  });
+}
+//------------------End of Shapes Section-------------------------
 // -------------------- UI blocks --------------------
 function filterBlock(title, key, items) {
   if (!items.length) return "";
