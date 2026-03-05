@@ -1067,17 +1067,191 @@ function vitolaCard(name, size, summary, bullets) {
 function renderLearnStrength() {
   root.innerHTML = shell({
     title: "Strength & Flavor",
-    subtitle: "Coming next — we’ll break down nicotine vs body vs flavor intensity.",
+    subtitle: "Body, nicotine, and flavor intensity are different things. Here’s how to tell them apart — and smoke smarter.",
     content: `
-      <div class="lb-card p-6 max-w-3xl">
-        <p class="text-sm text-brand-muted">
-          This page is not written yet — but the route works. ✅
-        </p>
-        <div class="mt-4">
-          <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+      <div class="max-w-4xl space-y-6">
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">The #1 misconception</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            People often say a cigar is “strong” when they actually mean one of three things:
+            <span class="text-brand-text">nicotine strength</span>, <span class="text-brand-text">body</span>, or
+            <span class="text-brand-text">flavor intensity</span>.
+            These can overlap, but they are not the same.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            ${learnFact("Nicotine strength", "How hard it hits your body: buzz, sweat, nausea, head rush.")}
+            ${learnFact("Body", "How heavy the smoke feels: light → creamy → dense → chewy.")}
+            ${learnFact("Flavor intensity", "How loud the flavors are: subtle → bold, regardless of nicotine.")}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Translation:</span>
+            A cigar can be mild in nicotine but loud in flavor (or vice versa).
+          </div>
         </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">How nicotine actually works (the “strength” people feel)</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Nicotine strength comes mostly from the <span class="text-brand-text">filler</span> blend —
+            especially higher-priming leaves and certain varietals. It can hit harder when you smoke fast,
+            on an empty stomach, or when a cigar is young and sharp.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Signs you’re feeling nicotine", [
+              "Lightheaded / head rush",
+              "Cold sweat, nausea, “the spins”",
+              "Shaky hands or increased heart rate",
+              "Sudden need for sugar or food"
+            ])}
+
+            ${learnBulletBox("What helps immediately", [
+              "Slow down (or set the cigar down)",
+              "Drink water and eat something sweet (juice, candy)",
+              "Fresh air and a few deep breaths",
+              "Don’t try to ‘power through’ — you’ll ruin the smoke"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Pro tip:</span>
+            If a cigar is hitting too hard, pair it with something that has sugar (cola, sweet rum, dessert wine),
+            or eat first. Nicotine hits harder when you’re empty.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Body: “How heavy is the smoke?”</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Body is the texture and density of the smoke — not the nicotine.
+            Two cigars can have the same nicotine level but feel totally different in the mouth.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Light body feels like", [
+              "airier smoke",
+              "tea/cedar/nut notes",
+              "clean finish"
+            ])}
+
+            ${learnBulletBox("Full body feels like", [
+              "dense, chewy smoke",
+              "espresso/cocoa/leather",
+              "heavier finish and lingering palate"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Flavor intensity: “How loud is it?”</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Flavor intensity is about <span class="text-brand-text">impact</span>.
+            A cigar can be mild in nicotine but still deliver big flavor (spice, sweetness, dark cocoa, etc.).
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Intensity increases with", [
+              "more spice/pepper and defined notes",
+              "higher combustion temperature (careful!)",
+              "certain wrappers (Habano, Broadleaf, San Andrés)",
+              "toasting and proper lighting"
+            ])}
+
+            ${learnBulletBox("Intensity decreases with", [
+              "slow cadence (cooler smoke)",
+              "more age (smoother edges)",
+              "higher humidity (can mute notes if too wet)",
+              "poor draw/underfilled construction"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Primings: the “power levels” of tobacco leaves</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Tobacco leaves are harvested in sections from the plant. Higher leaves get more sun and often become stronger.
+            These terms show up a lot in blend talk:
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            ${learnGloss("Volado", "Lower leaves. Often used for burn and smoother character.")}
+            ${learnGloss("Seco", "Mid leaves. Often brings aroma and balanced flavor.")}
+            ${learnGloss("Ligero", "Upper leaves. Often stronger and adds power/pepper.")}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Practical takeaway:</span>
+            A cigar described as “ligero-heavy” is more likely to hit harder in nicotine.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Why a cigar tastes harsh (and it’s not always “strength”)</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Harshness and bitterness are often a temperature problem. Overheating can make even great cigars taste rough.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Common causes", [
+              "Puffing too often (cigar runs hot)",
+              "Relighting repeatedly without letting it cool",
+              "Smoking too dry (burns hotter)",
+              "Wind (one side overheats)"
+            ])}
+            ${learnBulletBox("Fix it", [
+              "Slow your cadence (30–60 seconds between puffs)",
+              "Let it rest for a minute if it gets hot",
+              "Touch up gently; don’t torch it",
+              "If needed, purge: gently blow through the cigar to clear bitter smoke"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Choosing strength (fast guide)</h2>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("If you’re newer / morning smoke", [
+              "Mild to Medium strength",
+              "Connecticut or balanced Sumatra blends",
+              "Robusto/Toro sizes (easier to keep cool)",
+              "Coffee + breakfast helps a lot"
+            ])}
+
+            ${learnBulletBox("If you want bold but manageable", [
+              "Medium to Full body",
+              "Habano / Corojo / San Andrés wrappers",
+              "Toro or thicker ring gauge for cooler burn",
+              "Aged rum or bourbon pairings work great"
+            ])}
+
+            ${learnBulletBox("If you’re going Full power", [
+              "Eat first (seriously)",
+              "Slow cadence and avoid overheating",
+              "Bring sugar nearby (cola, candy, juice)",
+              "Don’t chain-smoke puffs"
+            ])}
+
+            ${learnBulletBox("If nicotine hits you hard", [
+              "Don’t be a hero — set it down",
+              "Hydrate + sugar + fresh air",
+              "Next time: lighter cigar or smoke after food",
+              "Consider smaller size or lower-ligero blends"
+            ])}
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+            <span class="text-brand-muted text-sm">•</span>
+            <a href="#/database" class="text-sm text-brand-gold hover:underline">Explore cigars by strength in the Database →</a>
+          </div>
+        </div>
+
       </div>
-    `
+    `,
   });
 }
 
