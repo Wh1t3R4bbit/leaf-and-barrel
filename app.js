@@ -33,6 +33,7 @@ const routes = {
   learn: renderLearn,
   "learn/anatomy": renderLearnAnatomy,
   "learn/wrappers": renderLearnWrappers,
+  "learn/shapes": renderLearnShapes,
 };
 
 function viewFromHash() {
