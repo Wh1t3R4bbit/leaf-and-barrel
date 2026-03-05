@@ -1,0 +1,281 @@
+{
+  "rums": [
+    {
+      "id": "rum-0001",
+      "name": "Bacardi Reserva Ocho",
+      "brand": "Bacardi",
+      "distillery": "Bacardi Distillery",
+      "origin": {
+        "country": "Puerto Rico",
+        "region": "Cataño"
+      },
+      "category": "Aged Rum",
+      "aged_years": 8,
+      "abv": 40,
+      "proof": 80,
+      "cask_finish": "American White Oak",
+      "description": "A classic Puerto Rican aged rum matured for a minimum of eight years. Smooth and balanced with dried fruit sweetness and toasted oak.",
+      "smell_notes": [
+        "Dried fruit",
+        "Vanilla",
+        "Oak",
+        "Molasses"
+      ],
+      "palate_notes": [
+        "Caramel",
+        "Toasted oak",
+        "Spice",
+        "Brown sugar"
+      ],
+      "finish_notes": [
+        "Warm oak",
+        "Soft spice",
+        "Lingering sweetness"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["maduro", "medium-full", "complex"],
+        "cigar_tags_all": [],
+        "notes": "Sweet oak and caramel complement darker wrappers and medium-full cigars."
+      },
+      "tags": [
+        "aged-rum",
+        "puerto-rico",
+        "balanced",
+        "caramel",
+        "oak",
+        "smooth"
+      ],
+      "image": "images/rum/bacardi-ocho.jpg",
+      "active": true
+    },
+    {
+      "id": "rum-0002",
+      "name": "Ron del Barrilito 3 Estrellas",
+      "brand": "Ron del Barrilito",
+      "distillery": "Hacienda Santa Ana",
+      "origin": {
+        "country": "Puerto Rico",
+        "region": "Bayamón"
+      },
+      "category": "Aged Rum",
+      "aged_years": null,
+      "abv": 43,
+      "proof": 86,
+      "cask_finish": "Oloroso Sherry Casks",
+      "description": "One of Puerto Rico’s most iconic premium rums. Rich and layered with dried fruit, baking spices, and oak complexity from sherry-seasoned barrels.",
+      "smell_notes": [
+        "Raisin",
+        "Oak",
+        "Spice",
+        "Caramel"
+      ],
+      "palate_notes": [
+        "Dried fruit",
+        "Vanilla",
+        "Chocolate",
+        "Sweet spice"
+      ],
+      "finish_notes": [
+        "Long",
+        "Sherry sweetness",
+        "Oak spice"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["full-bodied", "maduro", "luxury", "celebration"],
+        "cigar_tags_all": [],
+        "notes": "Pairs beautifully with rich, complex premium cigars."
+      },
+      "tags": [
+        "aged-rum",
+        "premium",
+        "sherry-cask",
+        "complex",
+        "luxury",
+        "puerto-rico"
+      ],
+      "image": "images/rum/barrilito-3-star.jpg",
+      "active": true
+    },
+    {
+      "id": "rum-0003",
+      "name": "Don Q Gran Reserva",
+      "brand": "Don Q",
+      "distillery": "Destilería Serrallés",
+      "origin": {
+        "country": "Puerto Rico",
+        "region": "Ponce"
+      },
+      "category": "Aged Rum",
+      "aged_years": null,
+      "abv": 40,
+      "proof": 80,
+      "cask_finish": "American Oak",
+      "description": "A refined Puerto Rican rum blend combining rums aged up to 12 years. Smooth and elegant with honey, vanilla, and toasted oak.",
+      "smell_notes": [
+        "Honey",
+        "Vanilla",
+        "Light oak"
+      ],
+      "palate_notes": [
+        "Caramel",
+        "Toasted almond",
+        "Sweet spice"
+      ],
+      "finish_notes": [
+        "Smooth",
+        "Soft oak",
+        "Light sweetness"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["mild-medium", "balanced", "cedar-aged"],
+        "cigar_tags_all": [],
+        "notes": "Works best with refined Dominican cigars."
+      },
+      "tags": [
+        "aged-rum",
+        "smooth",
+        "balanced",
+        "puerto-rico",
+        "vanilla",
+        "light-oak"
+      ],
+      "image": "images/rum/don-q-gran-reserva.jpg",
+      "active": true
+    },
+    {
+      "id": "rum-0004",
+      "name": "Don Q Reserva 7",
+      "brand": "Don Q",
+      "distillery": "Destilería Serrallés",
+      "origin": {
+        "country": "Puerto Rico",
+        "region": "Ponce"
+      },
+      "category": "Aged Rum",
+      "aged_years": 7,
+      "abv": 40,
+      "proof": 80,
+      "cask_finish": "American Oak",
+      "description": "Aged for seven years in American white oak barrels, delivering a rich and smooth profile with warm spice and caramel sweetness.",
+      "smell_notes": [
+        "Vanilla",
+        "Caramel",
+        "Oak"
+      ],
+      "palate_notes": [
+        "Brown sugar",
+        "Spice",
+        "Toasted oak"
+      ],
+      "finish_notes": [
+        "Warm",
+        "Sweet spice",
+        "Soft oak"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["medium-full", "spice-forward", "complex"],
+        "cigar_tags_all": [],
+        "notes": "Balances spicy cigars with sweetness."
+      },
+      "tags": [
+        "aged-rum",
+        "caramel",
+        "spice",
+        "puerto-rico",
+        "smooth"
+      ],
+      "image": "images/rum/don-q-reserva-7.jpg",
+      "active": true
+    },
+    {
+      "id": "rum-0005",
+      "name": "Bacardi Gran Reserva Diez",
+      "brand": "Bacardi",
+      "distillery": "Bacardi Distillery",
+      "origin": {
+        "country": "Puerto Rico",
+        "region": "Cataño"
+      },
+      "category": "Aged Rum",
+      "aged_years": 10,
+      "abv": 40,
+      "proof": 80,
+      "cask_finish": "American Oak",
+      "description": "Aged a minimum of ten years, delivering rich caramel sweetness with tropical fruit notes and smooth oak.",
+      "smell_notes": [
+        "Banana",
+        "Vanilla",
+        "Oak"
+      ],
+      "palate_notes": [
+        "Caramel",
+        "Pineapple",
+        "Brown sugar"
+      ],
+      "finish_notes": [
+        "Smooth",
+        "Sweet oak",
+        "Light fruit"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["medium-full", "maduro", "complex"],
+        "cigar_tags_all": [],
+        "notes": "Sweet tropical notes complement darker cigars."
+      },
+      "tags": [
+        "aged-rum",
+        "tropical",
+        "caramel",
+        "puerto-rico",
+        "smooth"
+      ],
+      "image": "images/rum/bacardi-diez.jpg",
+      "active": true
+    },
+    {
+      "id": "rum-0006",
+      "name": "Ron del Barrilito 2 Estrellas",
+      "brand": "Ron del Barrilito",
+      "distillery": "Hacienda Santa Ana",
+      "origin": {
+        "country": "Puerto Rico",
+        "region": "Bayamón"
+      },
+      "category": "Aged Rum",
+      "aged_years": null,
+      "abv": 43,
+      "proof": 86,
+      "cask_finish": "Oloroso Sherry Casks",
+      "description": "A historic Puerto Rican rum aged in sherry barrels, delivering smooth caramel sweetness and gentle spice.",
+      "smell_notes": [
+        "Vanilla",
+        "Oak",
+        "Sweet spice"
+      ],
+      "palate_notes": [
+        "Caramel",
+        "Raisin",
+        "Light chocolate"
+      ],
+      "finish_notes": [
+        "Smooth",
+        "Sweet oak",
+        "Spice"
+      ],
+      "pairing": {
+        "cigar_tags_any": ["mild-medium", "balanced", "classic"],
+        "cigar_tags_all": [],
+        "notes": "Pairs well with lighter Dominican cigars."
+      },
+      "tags": [
+        "aged-rum",
+        "smooth",
+        "sherry-cask",
+        "classic",
+        "puerto-rico"
+      ],
+      "image": "images/rum/barrilito-2-star.jpg",
+      "active": true
+    }
+  ]
+}
