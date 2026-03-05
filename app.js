@@ -721,7 +721,7 @@ function learnGloss(term, definition) {
 }
 //------------END of Learn Anatomy---------
 
-function renderLearnWrappers() {
+/*function renderLearnWrappers() {
   root.innerHTML = shell({
     title: "Wrapper Types",
     subtitle: "Wrapper color and fermentation shape sweetness, spice, and overall feel.",
@@ -755,8 +755,173 @@ function renderLearnWrappers() {
       </div>
     `,
   });
-}
+}*/
+//---------New Learn Wrapper Section-------------------------------
+function renderLearnWrappers() {
+  root.innerHTML = shell({
+    title: "Wrapper Types",
+    subtitle: "Wrapper influences aroma, sweetness/spice perception, and burn — but it’s not the whole story.",
+    content: `
+      <div class="max-w-4xl space-y-6">
 
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">What a wrapper really does</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            The wrapper is the outer leaf of the cigar — the part your palate meets first and your nose registers most.
+            It can shape <span class="text-brand-text">aroma</span>, <span class="text-brand-text">burn quality</span>, and how flavors feel
+            (sweetness, spice, “creaminess”), but the cigar’s
+            <span class="text-brand-text">strength (nicotine)</span> is usually driven by the filler.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            ${learnFact("Aroma impact", "Wrapper heavily influences what you smell (and taste).")}
+            ${learnFact("Combustion & burn", "Oiliness + thickness can change burn rate and temperature.")}
+            ${learnFact("Perception", "Color suggests fermentation/aging, not automatic strength.")}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Reality check:</span>
+            A dark wrapper can be “sweet” without being “strong,” and a light wrapper can still ride on a powerful filler blend.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Color vs strength (the common myth)</h2>
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("What color often indicates", [
+              "How long the leaf was fermented (darker can mean longer fermentation)",
+              "Potential sweetness (darker fermentation can deepen natural sugars)",
+              "A different flavor style (not automatically “stronger”)"
+            ])}
+            ${learnBulletBox("What strength depends on more", [
+              "Filler tobaccos (ligero content, primings, blend choices)",
+              "How fast you smoke (overheating makes anything taste harsh)",
+              "Age of the cigar (aging can smooth sharp edges)"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Core wrapper families</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Below are the wrappers you’ll see most often in shops. Think of these as “flavor lanes.”
+            Individual cigars can still vary based on binder/filler and fermentation.
+          </p>
+
+          <div class="mt-5 space-y-4">
+            ${wrapperProfile({
+              name: "Connecticut (Shade)",
+              vibe: "Smooth, creamy, approachable",
+              notes: ["cream", "nuts", "light cedar", "toast"],
+              body: "Mild to Medium",
+              bestFor: "Morning/coffee pairings, beginners, low bite"
+            })}
+
+            ${wrapperProfile({
+              name: "Habano",
+              vibe: "Spice-forward, classic cigar punch",
+              notes: ["cedar", "leather", "pepper", "earth"],
+              body: "Medium to Full",
+              bestFor: "Those who like spice + structure, whiskey pairings"
+            })}
+
+            ${wrapperProfile({
+              name: "Corojo",
+              vibe: "Aromatic spice + toasted sweetness",
+              notes: ["warm spice", "cedar", "toast", "light sweetness"],
+              body: "Medium to Full",
+              bestFor: "Complexity without going “dark and heavy”"
+            })}
+
+            ${wrapperProfile({
+              name: "Sumatra",
+              vibe: "Balanced, often slightly sweet + earthy",
+              notes: ["earth", "sweet wood", "spice", "tea-like tannin"],
+              body: "Mild to Medium-Full",
+              bestFor: "All-day smokes, balanced blends"
+            })}
+
+            ${wrapperProfile({
+              name: "Cameroon",
+              vibe: "Fragrant, sweet-spicy, unique",
+              notes: ["sweet cedar", "baking spice", "nuts", "dry cocoa"],
+              body: "Mild to Medium",
+              bestFor: "Elegant cigars; great with coffee or rum"
+            })}
+
+            ${wrapperProfile({
+              name: "Broadleaf (usually Maduro)",
+              vibe: "Thick, bold, naturally sweet",
+              notes: ["dark cocoa", "molasses", "earth", "espresso"],
+              body: "Medium-Full to Full",
+              bestFor: "Rich night smokes, stout/rum/rye pairings"
+            })}
+
+            ${wrapperProfile({
+              name: "San Andrés (Mexico)",
+              vibe: "Dark, earthy, chocolatey, dense",
+              notes: ["earth", "cocoa", "espresso", "pepper"],
+              body: "Medium-Full to Full",
+              bestFor: "Big flavor; loves aged rum + espresso"
+            })}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Maduro vs Oscuro (quick clarity)</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            These terms often describe how the wrapper looks and how it was processed.
+            They’re not universal standards across all brands, but here’s the practical takeaway:
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Maduro", [
+              "Darker wrapper from extended fermentation/processing",
+              "Often sweeter: cocoa/coffee/dark sugar",
+              "Can be medium to full depending on filler"
+            ])}
+            ${learnBulletBox("Oscuro", [
+              "Very dark wrapper (often even more fermented / darker leaf selection)",
+              "Often richer/bolder tasting",
+              "Can burn slower due to thicker/oilier leaf"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Pro tip:</span>
+            If a dark wrapper cigar tastes bitter, slow down. Bitterness is often heat, not “the wrapper being harsh.”
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">How to choose a wrapper (fast guide)</h2>
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("If you want…", [
+              "Creamy + smooth → Connecticut",
+              "Classic spice + structure → Habano / Corojo",
+              "Balanced sweetness → Sumatra / Cameroon",
+              "Dark chocolate + espresso → Broadleaf / San Andrés"
+            ])}
+            ${learnBulletBox("If you’re pairing with…", [
+              "Coffee → Connecticut, Cameroon, Maduro",
+              "Bourbon/Rye → Habano, Broadleaf, San Andrés",
+              "Aged Rum → Maduro, San Andrés, Cameroon",
+              "Red Wine → Maduro/Broadleaf (careful with very tannic wines)"
+            ])}
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+            <span class="text-brand-muted text-sm">•</span>
+            <a href="#/database" class="text-sm text-brand-gold hover:underline">Explore cigars by wrapper in the Database →</a>
+          </div>
+        </div>
+
+      </div>
+    `,
+  });
+}
+//----------End of Improved Learn Wrapper Section----------------
 // -------------------- UI blocks --------------------
 function filterBlock(title, key, items) {
   if (!items.length) return "";
