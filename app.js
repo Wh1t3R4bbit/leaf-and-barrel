@@ -429,7 +429,7 @@ function renderPairings() {
 
   root.innerHTML = shell({
     title: "Pairings",
-    subtitle: "PoC pairing library (loaded from JSON). Images can be added later.",
+    subtitle: "PoC pairing library (loaded from DB). #Images will be added later.",
     content: `
       <div class="grid lg:grid-cols-3 gap-6">
         <div class="lb-card p-6">
