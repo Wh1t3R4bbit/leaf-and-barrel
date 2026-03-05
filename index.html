@@ -8,9 +8,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CDN (MVP mode) -->
+  <!-- Tailwind CDN (PoC mode) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,137 +20,96 @@
           colors: {
             brand: {
               bg: '#0F0F11',
-              surface: '#1A1A1D',
+              surface: '#17171A',
+              surface2: '#1E1E22',
               border: '#2A2A2E',
               gold: '#D4AF37',
               copper: '#B87333',
               text: '#EAEAEA',
-              muted: '#9CA3AF'
+              muted: '#9CA3AF',
+              success: '#34D399',
+              danger: '#F87171'
             }
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
             serif: ['Playfair Display', 'serif'],
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(212,175,55,.18), 0 12px 40px rgba(0,0,0,.55)'
           }
         }
       }
     }
   </script>
 
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./style.css" />
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-gold selection:text-brand-bg flex flex-col min-h-screen">
-
-  <!-- =========================
-        Navigation
-  ========================== -->
-  <nav class="sticky top-0 z-50 bg-brand-bg/80 border-b border-brand-border py-4 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-
-      <!-- Logo -->
-      <a href="#/" id="nav-logo"
-         class="font-serif text-2xl font-semibold tracking-wide text-brand-gold">
-        Leaf & Barrel
+<body class="bg-brand-bg text-brand-text font-sans antialiased min-h-screen">
+  <!-- Top Nav -->
+  <nav class="lb-nav sticky top-0 z-50 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#/" class="flex items-center gap-3">
+        <span class="lb-mark"></span>
+        <span class="font-serif text-2xl font-semibold tracking-wide text-brand-gold">Leaf & Barrel</span>
       </a>
 
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex space-x-8 text-sm font-medium text-brand-muted">
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-muted">
         <a href="#/" class="nav-link hover:text-brand-text transition-colors" data-view="home">Home</a>
         <a href="#/database" class="nav-link hover:text-brand-text transition-colors" data-view="database">Database</a>
         <a href="#/pairings" class="nav-link hover:text-brand-text transition-colors" data-view="pairings">Pairings</a>
-        <a href="#/guides" class="nav-link hover:text-brand-text transition-colors" data-view="guides">Guides</a>
+        <a href="#/learn" class="nav-link hover:text-brand-text transition-colors" data-view="learn">Learn</a>
       </div>
 
-      <!-- Right Actions -->
-      <div class="flex items-center space-x-4">
-
-        <!-- Search Icon -->
-        <button aria-label="Search"
-          class="p-2 text-brand-muted hover:text-brand-text transition-colors">
+      <div class="flex items-center gap-3">
+        <button id="open-search" class="lb-icon-btn" title="Search">
           <i data-lucide="search" class="w-5 h-5"></i>
         </button>
-
-        <!-- Sign In -->
-        <button
-          class="hidden md:block px-4 py-2 text-sm font-medium bg-brand-surface border border-brand-border rounded-full hover:border-brand-gold/50 transition-colors">
-          Sign In
-        </button>
+        <a href="#/database" class="hidden md:inline-flex lb-pill-btn">Explore</a>
       </div>
-
     </div>
   </nav>
 
-  <!-- =========================
-        Main App Root
-  ========================== -->
-  <main id="app-root"
-        class="flex-grow flex flex-col w-full">
-  </main>
+  <!-- App Root -->
+  <main id="app-root" class="flex flex-col"></main>
 
-  <!-- =========================
-        Footer
-  ========================== -->
-  <footer class="border-t border-brand-border bg-brand-bg py-12 mt-20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-
-      <div class="col-span-1 md:col-span-2">
-        <h3 class="font-serif text-xl text-brand-gold mb-4">
-          Leaf & Barrel
-        </h3>
-        <p class="text-brand-muted text-sm max-w-sm mb-6">
-          Find the flavor. Log the ritual. Pair it right.
-          The modern compendium for the discerning aficionado.
+  <!-- Footer -->
+  <footer class="border-t border-brand-border mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3">
+          <span class="lb-mark"></span>
+          <h3 class="font-serif text-xl text-brand-gold">Leaf & Barrel</h3>
+        </div>
+        <p class="text-brand-muted text-sm mt-3 max-w-md">
+          Find the flavor. Log the ritual. Pair it right. A modern compendium for cigar people.
         </p>
-        <p class="text-xs text-brand-border">
-          Enjoy responsibly.
-        </p>
+        <p class="text-xs text-brand-muted/70 mt-5">Enjoy responsibly.</p>
       </div>
 
       <div>
-        <h4 class="font-medium mb-4">Explore</h4>
+        <h4 class="font-medium mb-3">Explore</h4>
         <ul class="space-y-2 text-sm text-brand-muted">
           <li><a href="#/database" class="hover:text-brand-text transition-colors">Cigars</a></li>
           <li><a href="#/pairings" class="hover:text-brand-text transition-colors">Pairings</a></li>
-          <li><a href="#/guides" class="hover:text-brand-text transition-colors">Guides</a></li>
+          <li><a href="#/learn" class="hover:text-brand-text transition-colors">Learn</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="font-medium mb-4">Newsletter</h4>
-        <div class="flex">
-          <input type="email"
-            placeholder="Your email"
-            class="bg-brand-surface border border-brand-border rounded-l-md px-4 py-2 text-sm w-full focus:outline-none focus:border-brand-gold/50">
-          <button
-            class="bg-brand-gold text-brand-bg px-4 py-2 rounded-r-md text-sm font-medium hover:bg-brand-gold/90 transition-colors">
-            Join
-          </button>
-        </div>
+        <h4 class="font-medium mb-3">PoC Notes</h4>
+        <p class="text-sm text-brand-muted">
+          Data is loaded from JSON files in <span class="lb-code">/data</span>.
+        </p>
       </div>
-
     </div>
   </footer>
 
-  <!-- =========================
-        Scripts
-  ========================== -->
-
-  <!-- Initialize Lucide -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.lucide) {
-        lucide.createIcons();
-      }
-    });
-  </script>
-
-  <!-- App Router -->
   <script type="module" src="./app.js"></script>
-
 </body>
 </html>
