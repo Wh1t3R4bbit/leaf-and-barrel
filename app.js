@@ -757,6 +757,35 @@ function learnGloss(term, definition) {
   });
 }*/
 //---------New Learn Wrapper Section-------------------------------
+function wrapperProfile({ name, vibe, notes, body, bestFor }) {
+  return `
+    <div class="rounded-2xl border border-brand-border bg-brand-bg p-5">
+      
+      <div class="flex justify-between items-start">
+        <div>
+          <div class="text-sm font-medium text-brand-text">${escapeHtml(name)}</div>
+          <div class="text-xs text-brand-muted mt-1">${escapeHtml(vibe)}</div>
+        </div>
+
+        <div class="text-xs border border-brand-border px-2 py-1 rounded-full text-brand-muted">
+          ${escapeHtml(body)}
+        </div>
+      </div>
+
+      <div class="mt-3 text-xs text-brand-muted">
+        <span class="text-brand-text font-medium">Common notes:</span>
+        ${notes.map(n => `<span class="inline-block ml-2">${chip(n)}</span>`).join("")}
+      </div>
+
+      <div class="mt-3 text-xs text-brand-muted">
+        <span class="text-brand-text font-medium">Best for:</span>
+        ${escapeHtml(bestFor)}
+      </div>
+
+    </div>
+  `;
+}
+//-----------------------Above is the form-------------------
 function renderLearnWrappers() {
   root.innerHTML = shell({
     title: "Wrapper Types",
