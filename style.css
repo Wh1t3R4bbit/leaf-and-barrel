@@ -116,3 +116,9 @@
   border: 1px solid var(--lb-border);
   background: rgba(23,23,26,.7);
 }
+/* Mobile: give filters breathing room and avoid feeling like a wall */
+@media (max-width: 1023px) {
+  .lb-card {
+    scroll-margin-top: 96px;
+  }
+}
