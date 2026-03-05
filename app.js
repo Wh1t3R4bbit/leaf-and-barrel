@@ -489,35 +489,6 @@ function renderLearn() {
   });
 }
 
-/*function renderLearnAnatomy() {
-  root.innerHTML = shell({
-    title: "Cigar Anatomy",
-    subtitle: "The three core components of every premium cigar.",
-    content: `
-      <div class="max-w-3xl space-y-6">
-        ${learnSection("Wrapper", [
-          "The outer leaf — chosen for appearance, burn, and aroma.",
-          "Often a major contributor to the cigar’s overall character.",
-          "Examples: Connecticut, Habano, Maduro, Oscuro."
-        ])}
-
-        ${learnSection("Binder", [
-          "The structural leaf beneath the wrapper.",
-          "Holds the filler together and helps the cigar burn evenly.",
-          "Usually contributes less flavor than the wrapper/filler."
-        ])}
-
-        ${learnSection("Filler", [
-          "The internal blend that drives complexity and strength.",
-          "Premium cigars typically use long-filler leaves.",
-          "Origin mix + aging = the cigar’s signature profile."
-        ])}
-
-        <a class="text-sm text-brand-gold hover:underline" href="#/learn">← Back to Learn</a>
-      </div>
-    `,
-  });
-}*/
 //--------New developed Learn Anartomy Section
 function renderLearnAnatomy() {
   root.innerHTML = shell({
@@ -722,41 +693,7 @@ function learnGloss(term, definition) {
 }
 //------------END of Learn Anatomy---------
 
-/*function renderLearnWrappers() {
-  root.innerHTML = shell({
-    title: "Wrapper Types",
-    subtitle: "Wrapper color and fermentation shape sweetness, spice, and overall feel.",
-    content: `
-      <div class="max-w-3xl space-y-6">
-        ${learnSection("Connecticut", [
-          "Typically lighter and smoother.",
-          "Common notes: cream, nuts, light cedar.",
-          "Great for mild-to-medium profiles."
-        ])}
 
-        ${learnSection("Habano", [
-          "Often richer, spicier, and more assertive.",
-          "Common notes: cedar, leather, spice, earth.",
-          "Frequently medium-to-full."
-        ])}
-
-        ${learnSection("Maduro", [
-          "Darker leaf from extended fermentation.",
-          "Common notes: cocoa, espresso, dark sweetness.",
-          "Can be medium to full, depending on filler."
-        ])}
-
-        ${learnSection("Oscuro", [
-          "Very dark — bold, deep flavors.",
-          "Often paired with stronger blends.",
-          "Expect intensity and richness."
-        ])}
-
-        <a class="text-sm text-brand-gold hover:underline" href="#/learn">← Back to Learn</a>
-      </div>
-    `,
-  });
-}*/
 //---------New Learn Wrapper Section-------------------------------
 function wrapperProfile({ name, vibe, notes, body, bestFor }) {
   return `
@@ -786,7 +723,6 @@ function wrapperProfile({ name, vibe, notes, body, bestFor }) {
     </div>
   `;
 }
-//-----------------------Above is the form-------------------
 function renderLearnWrappers() {
   root.innerHTML = shell({
     title: "Wrapper Types",
@@ -1106,6 +1042,25 @@ function renderLearnShapes() {
   });
 }
 //------------------End of Shapes Section-------------------------
+function vitolaCard(name, size, summary, bullets) {
+  return `
+    <div class="rounded-2xl border border-brand-border bg-brand-bg p-5">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-medium text-brand-text">${escapeHtml(name)}</div>
+          <div class="text-xs text-brand-muted mt-1">${escapeHtml(summary)}</div>
+        </div>
+        <div class="text-xs border border-brand-border px-2 py-1 rounded-full text-brand-muted">
+          ${escapeHtml(size)}
+        </div>
+      </div>
+
+      <ul class="mt-3 space-y-1 text-xs text-brand-muted">
+        ${bullets.map(b => `<li>• ${escapeHtml(b)}</li>`).join("")}
+      </ul>
+    </div>
+  `;
+}
 // -------------------- UI blocks --------------------
 function filterBlock(title, key, items) {
   if (!items.length) return "";
