@@ -1258,17 +1258,281 @@ function renderLearnStrength() {
 function renderLearnMaking() {
   root.innerHTML = shell({
     title: "How Cigars Are Made",
-    subtitle: "Coming next — from seed to humidor.",
+    subtitle: "From seed to humidor — the craft, patience, and process behind a premium cigar.",
     content: `
-      <div class="lb-card p-6 max-w-3xl">
-        <p class="text-sm text-brand-muted">
-          This page is not written yet — but the route works. ✅
-        </p>
-        <div class="mt-4">
-          <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+      <div class="max-w-4xl space-y-6">
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">Why this process matters</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            A premium cigar is not just rolled tobacco. It is the result of
+            <span class="text-brand-text">agriculture</span>,
+            <span class="text-brand-text">fermentation</span>,
+            <span class="text-brand-text">aging</span>,
+            <span class="text-brand-text">blending</span>, and
+            <span class="text-brand-text">handcraft</span>.
+          </p>
+
+          <p class="text-sm text-brand-muted mt-3">
+            Every decision along the way — how the leaf is grown, how long it ferments,
+            how it is aged, and how it is rolled — affects the final cigar’s
+            flavor, body, burn, aroma, and smoothness.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            ${learnFact("Farming", "Soil, sun, and climate shape the raw tobacco.")}
+            ${learnFact("Fermentation", "Removes harshness and deepens aroma/flavor.")}
+            ${learnFact("Rolling", "Construction affects burn, draw, and consistency.")}
+          </div>
         </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">1. Seedbeds and tobacco farms</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            The process starts with tiny tobacco seeds. Seedlings are first grown in controlled beds,
+            then transplanted into fields once they are strong enough.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("What affects the leaf here", [
+              "Soil composition",
+              "Sun exposure",
+              "Rain and humidity",
+              "Altitude and climate"
+            ])}
+            ${learnBulletBox("Why origin matters", [
+              "Nicaraguan tobacco often feels bold and spicy",
+              "Dominican tobacco is often smoother and more aromatic",
+              "Honduran tobacco often brings earth and strength",
+              "Ecuador is famous for premium wrapper production"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Think wine:</span>
+            Just like grapes reflect terroir, tobacco reflects where and how it was grown.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">2. Harvesting by priming</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Tobacco leaves are not all harvested at once. They are taken in stages called
+            <span class="text-brand-text">primings</span>, from the bottom of the plant upward.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            ${learnGloss("Volado", "Lower leaves. Often lighter and used to help combustion.")}
+            ${learnGloss("Seco", "Middle leaves. Often aromatic and balanced.")}
+            ${learnGloss("Ligero", "Upper leaves. Stronger, thicker, and more intense.")}
+          </div>
+
+          <p class="text-sm text-brand-muted mt-4">
+            Higher leaves get more sun and often produce more strength and density.
+            That is why ligero-heavy cigars can feel more powerful.
+          </p>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">3. Curing the leaves</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            After harvest, tobacco leaves are hung in curing barns.
+            This stage slowly removes moisture and begins the transformation from green plant
+            to usable tobacco.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("What curing does", [
+              "Removes excess water",
+              "Changes leaf color from green to brown",
+              "Starts breaking down chlorophyll",
+              "Prepares the leaf for fermentation"
+            ])}
+            ${learnBulletBox("Why it matters", [
+              "Poor curing can leave harshness in the leaf",
+              "Proper curing helps stabilize aroma and texture",
+              "Wrapper leaves especially need careful curing"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">4. Fermentation</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Fermentation is one of the most important steps in cigar making.
+            Leaves are piled in controlled stacks so heat and moisture can naturally build up.
+          </p>
+
+          <p class="text-sm text-brand-muted mt-3">
+            This process reduces harsh compounds, smooths the tobacco, and deepens sweetness,
+            earthiness, spice, and aroma.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("What fermentation changes", [
+              "Removes bitterness and ammonia",
+              "Develops aroma and sweetness",
+              "Darkens the leaf over time",
+              "Softens rough edges"
+            ])}
+            ${learnBulletBox("What it can influence later", [
+              "Maduro / Oscuro wrapper color",
+              "Chocolate / espresso / dark sugar notes",
+              "How smooth or rough a cigar feels"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">Important:</span>
+            Darker wrapper color often reflects fermentation and processing — not automatic nicotine strength.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">5. Sorting and aging</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            After fermentation, leaves are sorted by size, texture, color, and quality.
+            Then many are aged further before being used in blends.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Why aging matters", [
+              "Smooths rough edges",
+              "Helps flavors marry together",
+              "Adds refinement and consistency",
+              "Can reduce “young” sharpness"
+            ])}
+            ${learnBulletBox("Why sorting matters", [
+              "Ensures wrapper appearance consistency",
+              "Keeps blends repeatable from batch to batch",
+              "Improves combustion and quality control"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">6. Blending the cigar</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            This is where the cigar maker decides what the cigar will become.
+            Different leaves, primings, and origins are combined to create a target profile.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("A blend might be designed for", [
+              "Smoothness and creaminess",
+              "Spice and strength",
+              "Chocolate / espresso depth",
+              "Complexity through the thirds"
+            ])}
+            ${learnBulletBox("What blenders balance", [
+              "Strength vs smoothness",
+              "Burn rate vs density",
+              "Wrapper impact vs filler character",
+              "Consistency across production runs"
+            ])}
+          </div>
+
+          <p class="text-sm text-brand-muted mt-4">
+            This is one reason the same wrapper on two different cigars can taste completely different.
+            The blend underneath changes everything.
+          </p>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">7. Hand rolling</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            In premium cigar production, skilled rollers hand-assemble the filler,
+            wrap it in binder, and finish it with the outer wrapper.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("What the roller controls", [
+              "How tightly the bunch is packed",
+              "How evenly the cigar burns",
+              "How easy or tight the draw feels",
+              "How cleanly the wrapper is applied"
+            ])}
+            ${learnBulletBox("Construction problems can cause", [
+              "Tight draw",
+              "Loose draw",
+              "Canoeing",
+              "Tunneling",
+              "Unraveling wrapper"
+            ])}
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm text-brand-muted">
+            <span class="text-brand-text font-medium">A well-made cigar</span>
+            should feel firm but not rock hard, and it should smoke with consistent resistance.
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">8. Quality control and boxing</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            After rolling, cigars are checked for weight, draw resistance, wrapper appearance,
+            and construction consistency. Then they are banded, boxed, and prepared for distribution.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Factories often check", [
+              "Draw resistance",
+              "Wrapper seams and cap quality",
+              "Color consistency",
+              "Box count and presentation"
+            ])}
+            ${learnBulletBox("Why this matters to you", [
+              "Better consistency from stick to stick",
+              "More reliable draw and burn",
+              "Cleaner presentation and fewer defects"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">9. Resting, shipping, and the humidor</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            Once boxed, cigars still need proper humidity and temperature.
+            Even a beautifully made cigar can suffer if it is stored too dry, too wet, or too hot.
+          </p>
+
+          <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm">
+            ${learnBulletBox("Bad storage can cause", [
+              "Cracked wrappers",
+              "Tight draw from over-humidification",
+              "Fast hot burn from dryness",
+              "Muted flavors"
+            ])}
+            ${learnBulletBox("Good storage supports", [
+              "Stable burn",
+              "Better aroma",
+              "Cleaner flavor expression",
+              "Longer shelf life"
+            ])}
+          </div>
+        </div>
+
+        <div class="lb-card p-6">
+          <h2 class="font-serif text-2xl text-brand-gold">The big takeaway</h2>
+          <p class="text-sm text-brand-muted mt-3">
+            A premium cigar is the result of many disciplines working together:
+            farming, leaf science, fermentation, blending, and craftsmanship.
+          </p>
+
+          <p class="text-sm text-brand-muted mt-3">
+            That’s why the best cigars feel intentional. The burn, the aroma, the wrapper feel,
+            the transitions through the thirds — none of it happens by accident.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="#/learn" class="text-sm text-brand-gold hover:underline">← Back to Learn</a>
+            <span class="text-brand-muted text-sm">•</span>
+            <a href="#/database" class="text-sm text-brand-gold hover:underline">Explore cigars in the Database →</a>
+          </div>
+        </div>
+
       </div>
-    `
+    `,
   });
 }
 // -------------------- UI blocks --------------------
