@@ -37,63 +37,91 @@ async function initWhiskeyPage() {
     }
 
     const data = await response.json();
-    whiskeyState.all = Array.isArray(data) ? data : [];
+
+    // Your JSON is shaped like: { "whiskeys": [ ... ] }
+    whiskeyState.all = Array.isArray(data)
+      ? data
+      : Array.isArray(data.whiskeys)
+      ? data.whiskeys
+      : [];
 
     populateFilterOptions(whiskeyState.all);
     renderTagFilters(whiskeyState.all);
     applyFilters();
     bindEvents();
   } catch (error) {
-    console.error(error);
+    console.error("Whiskey page failed to initialize:", error);
     renderErrorState("Could not load the whiskey database.");
   }
 }
 
 function bindEvents() {
-  els.search.addEventListener("input", (event) => {
-    whiskeyState.filters.search = event.target.value.trim().toLowerCase();
-    applyFilters();
-  });
+  if (els.search) {
+    els.search.addEventListener("input", (event) => {
+      whiskeyState.filters.search = event.target.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
 
-  els.filterType.addEventListener("change", (event) => {
-    whiskeyState.filters.type = event.target.value;
-    applyFilters();
-  });
+  if (els.filterType) {
+    els.filterType.addEventListener("change", (event) => {
+      whiskeyState.filters.type = event.target.value;
+      applyFilters();
+    });
+  }
 
-  els.filterCountry.addEventListener("change", (event) => {
-    whiskeyState.filters.country = event.target.value;
-    applyFilters();
-  });
+  if (els.filterCountry) {
+    els.filterCountry.addEventListener("change", (event) => {
+      whiskeyState.filters.country = event.target.value;
+      applyFilters();
+    });
+  }
 
-  els.filterRegion.addEventListener("change", (event) => {
-    whiskeyState.filters.region = event.target.value;
-    applyFilters();
-  });
+  if (els.filterRegion) {
+    els.filterRegion.addEventListener("change", (event) => {
+      whiskeyState.filters.region = event.target.value;
+      applyFilters();
+    });
+  }
 
-  els.filterProof.addEventListener("change", (event) => {
-    whiskeyState.filters.proof = event.target.value;
-    applyFilters();
-  });
+  if (els.filterProof) {
+    els.filterProof.addEventListener("change", (event) => {
+      whiskeyState.filters.proof = event.target.value;
+      applyFilters();
+    });
+  }
 
-  els.clearFilters.addEventListener("click", clearAllFilters);
+  if (els.clearFilters) {
+    els.clearFilters.addEventListener("click", clearAllFilters);
+  }
 }
 
 function setLoadingState() {
-  els.resultsCount.textContent = "Loading whiskeys...";
-  els.results.innerHTML = `
-    <div class="empty-state">
-      <p>Pouring the whiskey database...</p>
-    </div>
-  `;
+  if (els.resultsCount) {
+    els.resultsCount.textContent = "Loading whiskeys...";
+  }
+
+  if (els.results) {
+    els.results.innerHTML = `
+      <div class="lb-empty lb-card">
+        <p>Pouring the whiskey database...</p>
+      </div>
+    `;
+  }
 }
 
 function renderErrorState(message) {
-  els.resultsCount.textContent = "0 whiskeys found";
-  els.results.innerHTML = `
-    <div class="empty-state error-state">
-      <p>${message}</p>
-    </div>
-  `;
+  if (els.resultsCount) {
+    els.resultsCount.textContent = "0 whiskeys found";
+  }
+
+  if (els.results) {
+    els.results.innerHTML = `
+      <div class="lb-empty lb-card">
+        <p>${escapeHtml(message)}</p>
+      </div>
+    `;
+  }
 }
 
 function clearAllFilters() {
@@ -104,20 +132,28 @@ function clearAllFilters() {
   whiskeyState.filters.proof = "";
   whiskeyState.filters.tags.clear();
 
-  els.search.value = "";
-  els.filterType.value = "";
-  els.filterCountry.value = "";
-  els.filterRegion.value = "";
-  els.filterProof.value = "";
+  if (els.search) els.search.value = "";
+  if (els.filterType) els.filterType.value = "";
+  if (els.filterCountry) els.filterCountry.value = "";
+  if (els.filterRegion) els.filterRegion.value = "";
+  if (els.filterProof) els.filterProof.value = "";
 
-  applyFilters();
   renderTagFilters(whiskeyState.all);
+  applyFilters();
 }
 
 function populateFilterOptions(items) {
-  const types = getUniqueValues(items, "type");
-  const countries = getUniqueValues(items, "country");
-  const regions = getUniqueValues(items, "region");
+  const types = [
+    ...new Set(items.map((item) => item.category).filter(Boolean)),
+  ].sort((a, b) => a.localeCompare(b));
+
+  const countries = [
+    ...new Set(items.map((item) => item.origin?.country).filter(Boolean)),
+  ].sort((a, b) => a.localeCompare(b));
+
+  const regions = [
+    ...new Set(items.map((item) => item.origin?.region).filter(Boolean)),
+  ].sort((a, b) => a.localeCompare(b));
 
   fillSelect(els.filterType, types);
   fillSelect(els.filterCountry, countries);
@@ -125,9 +161,14 @@ function populateFilterOptions(items) {
 }
 
 function fillSelect(selectEl, values) {
-  const currentFirstOption = selectEl.innerHTML;
+  if (!selectEl) return;
 
-  selectEl.innerHTML = currentFirstOption;
+  const firstOption = selectEl.querySelector("option");
+  selectEl.innerHTML = "";
+
+  if (firstOption) {
+    selectEl.appendChild(firstOption);
+  }
 
   values.forEach((value) => {
     const option = document.createElement("option");
@@ -135,12 +176,6 @@ function fillSelect(selectEl, values) {
     option.textContent = value;
     selectEl.appendChild(option);
   });
-}
-
-function getUniqueValues(items, key) {
-  return [...new Set(items.map((item) => item[key]).filter(Boolean))].sort((a, b) =>
-    a.localeCompare(b)
-  );
 }
 
 function getAllTags(items) {
@@ -156,20 +191,22 @@ function getAllTags(items) {
 }
 
 function renderTagFilters(items) {
+  if (!els.tagFilters) return;
+
   const tags = getAllTags(items);
 
   if (!tags.length) {
-    els.tagFilters.innerHTML = `<p class="muted">No tags available.</p>`;
+    els.tagFilters.innerHTML = `<p class="lb-copy">No tags available.</p>`;
     return;
   }
 
   els.tagFilters.innerHTML = tags
     .map((tag) => {
-      const active = whiskeyState.filters.tags.has(tag) ? "active" : "";
+      const active = whiskeyState.filters.tags.has(tag) ? "is-active" : "";
       return `
         <button
           type="button"
-          class="tag-chip ${active}"
+          class="lb-chip ${active}"
           data-tag="${escapeHtml(tag)}"
         >
           ${escapeHtml(tag)}
@@ -178,7 +215,7 @@ function renderTagFilters(items) {
     })
     .join("");
 
-  els.tagFilters.querySelectorAll(".tag-chip").forEach((button) => {
+  els.tagFilters.querySelectorAll("[data-tag]").forEach((button) => {
     button.addEventListener("click", () => {
       const tag = button.dataset.tag;
 
@@ -198,29 +235,39 @@ function applyFilters() {
   const { search, type, country, region, proof, tags } = whiskeyState.filters;
 
   whiskeyState.filtered = whiskeyState.all.filter((item) => {
+    const allNotes = [
+      ...(item.smell_notes || []),
+      ...(item.palate_notes || []),
+      ...(item.finish_notes || []),
+    ];
+
     const searchBlob = [
       item.name,
+      item.brand,
       item.distillery,
-      item.type,
-      item.country,
-      item.region,
+      item.category,
+      item.origin?.country,
+      item.origin?.region,
       item.description,
-      item.finish,
+      item.cask_finish,
+      item.mash_bill,
       ...(item.tags || []),
-      ...(item.notes || []),
+      ...allNotes,
     ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
 
     const matchesSearch = !search || searchBlob.includes(search);
-    const matchesType = !type || item.type === type;
-    const matchesCountry = !country || item.country === country;
-    const matchesRegion = !region || item.region === region;
+    const matchesType = !type || item.category === type;
+    const matchesCountry = !country || item.origin?.country === country;
+    const matchesRegion = !region || item.origin?.region === region;
     const matchesProof = matchesProofRange(item.proof, proof);
     const matchesTags =
       tags.size === 0 ||
-      [...tags].every((tag) => Array.isArray(item.tags) && item.tags.includes(tag));
+      [...tags].every(
+        (tag) => Array.isArray(item.tags) && item.tags.includes(tag)
+      );
 
     return (
       matchesSearch &&
@@ -256,12 +303,14 @@ function matchesProofRange(proofValue, selectedRange) {
 }
 
 function renderResults() {
+  if (!els.resultsCount || !els.results) return;
+
   const count = whiskeyState.filtered.length;
   els.resultsCount.textContent = `${count} whiskey${count === 1 ? "" : "s"} found`;
 
   if (!count) {
     els.results.innerHTML = `
-      <div class="empty-state">
+      <div class="lb-empty lb-card">
         <p>No whiskeys matched your filters.</p>
       </div>
     `;
@@ -270,35 +319,100 @@ function renderResults() {
 
   els.results.innerHTML = whiskeyState.filtered
     .map((item) => {
-      const tags = Array.isArray(item.tags)
-        ? item.tags.map((tag) => `<span class="meta-tag">${escapeHtml(tag)}</span>`).join("")
+      const tagsHtml = Array.isArray(item.tags)
+        ? item.tags
+            .map((tag) => `<span class="lb-chip">${escapeHtml(tag)}</span>`)
+            .join("")
         : "";
 
-      const notes = Array.isArray(item.notes) && item.notes.length
-        ? `<p class="whiskey-notes"><strong>Tasting Notes:</strong> ${escapeHtml(item.notes.join(", "))}</p>`
-        : "";
+      const allNotes = [
+        ...(item.smell_notes || []),
+        ...(item.palate_notes || []),
+        ...(item.finish_notes || []),
+      ];
+
+      const abvDisplay =
+        typeof item.abv === "number" ? `${item.abv}%` : item.abv || "";
+
+      const ageDisplay =
+        item.aged_years !== null && item.aged_years !== undefined
+          ? `${item.aged_years} years`
+          : "";
 
       return `
-        <article class="whiskey-card card">
-          <div class="whiskey-card-top">
-            <p class="whiskey-type">${escapeHtml(item.type || "Whiskey")}</p>
-            <h2>${escapeHtml(item.name || "Unnamed Whiskey")}</h2>
-            <p class="whiskey-distillery">${escapeHtml(item.distillery || "Unknown Distillery")}</p>
+        <article class="lb-card lb-whiskey-card">
+          <div>
+            <p class="lb-kicker">${escapeHtml(item.category || "Whiskey")}</p>
+            <h2 class="lb-card-title">${escapeHtml(item.name || "Unnamed Whiskey")}</h2>
+            <p class="lb-card-subtitle">
+              ${escapeHtml(item.brand || item.distillery || "Unknown Distillery")}
+            </p>
           </div>
 
-          <div class="whiskey-meta">
-            ${item.country ? `<span><strong>Country:</strong> ${escapeHtml(item.country)}</span>` : ""}
-            ${item.region ? `<span><strong>Region:</strong> ${escapeHtml(item.region)}</span>` : ""}
-            ${item.proof ? `<span><strong>Proof:</strong> ${escapeHtml(String(item.proof))}</span>` : ""}
-            ${item.abv ? `<span><strong>ABV:</strong> ${escapeHtml(String(item.abv))}</span>` : ""}
+          <div class="lb-meta">
+            ${
+              item.origin?.country
+                ? `<span><strong>Country:</strong> ${escapeHtml(item.origin.country)}</span>`
+                : ""
+            }
+            ${
+              item.origin?.region
+                ? `<span><strong>Region:</strong> ${escapeHtml(item.origin.region)}</span>`
+                : ""
+            }
+            ${
+              item.proof
+                ? `<span><strong>Proof:</strong> ${escapeHtml(String(item.proof))}</span>`
+                : ""
+            }
+            ${
+              abvDisplay
+                ? `<span><strong>ABV:</strong> ${escapeHtml(abvDisplay)}</span>`
+                : ""
+            }
+            ${
+              ageDisplay
+                ? `<span><strong>Age:</strong> ${escapeHtml(ageDisplay)}</span>`
+                : ""
+            }
           </div>
 
-          ${item.description ? `<p class="whiskey-description">${escapeHtml(item.description)}</p>` : ""}
-          ${item.finish ? `<p class="whiskey-finish"><strong>Finish:</strong> ${escapeHtml(item.finish)}</p>` : ""}
-          ${notes}
+          ${
+            item.description
+              ? `<p class="lb-copy">${escapeHtml(item.description)}</p>`
+              : ""
+          }
 
-          <div class="whiskey-tags">
-            ${tags}
+          ${
+            item.mash_bill
+              ? `<p class="lb-copy"><strong>Mash Bill:</strong> ${escapeHtml(item.mash_bill)}</p>`
+              : ""
+          }
+
+          ${
+            item.cask_finish
+              ? `<p class="lb-copy"><strong>Cask Finish:</strong> ${escapeHtml(item.cask_finish)}</p>`
+              : ""
+          }
+
+          ${
+            allNotes.length
+              ? `<p class="lb-copy"><strong>Tasting Notes:</strong> ${escapeHtml(
+                  allNotes.join(", ")
+                )}</p>`
+              : ""
+          }
+
+          ${
+            item.pairing?.notes
+              ? `<p class="lb-copy"><strong>Pairing Note:</strong> ${escapeHtml(
+                  item.pairing.notes
+                )}</p>`
+              : ""
+          }
+
+          <div class="lb-tag-list">
+            ${tagsHtml}
           </div>
         </article>
       `;
