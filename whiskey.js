@@ -339,8 +339,28 @@ function renderResults() {
           ? `${item.aged_years} years`
           : "";
 
+      const imageSrc = item.image
+        ? item.image.startsWith("/") ? item.image : `/${item.image}`
+        : "";
+
+      const imageHtml = imageSrc
+        ? `
+          <div class="lb-whiskey-image-wrap">
+            <img
+              class="lb-whiskey-image"
+              src="${escapeHtml(imageSrc)}"
+              alt="${escapeHtml(item.name || "Whiskey bottle")}"
+              loading="lazy"
+              onerror="this.closest('.lb-whiskey-image-wrap')?.remove();"
+            />
+          </div>
+        `
+        : "";
+
       return `
         <article class="lb-card lb-whiskey-card">
+          ${imageHtml}
+
           <div>
             <p class="lb-kicker">${escapeHtml(item.category || "Whiskey")}</p>
             <h2 class="lb-card-title">${escapeHtml(item.name || "Unnamed Whiskey")}</h2>
