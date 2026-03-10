@@ -122,3 +122,279 @@
     scroll-margin-top: 96px;
   }
 }
+
+/* =================================
+   PAGE / SECTION LAYOUT
+================================= */
+
+.lb-page{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.lb-section{
+  margin-top: 1.5rem;
+}
+
+.lb-section-head{
+  margin-bottom: 1rem;
+}
+
+.lb-eyebrow{
+  color: var(--lb-gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: .45rem;
+}
+
+.lb-title{
+  color: var(--lb-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.lb-lead{
+  color: var(--lb-muted);
+  max-width: 720px;
+  margin-top: .9rem;
+  line-height: 1.7;
+}
+
+/* =================================
+   CONTROLS / FILTERS
+================================= */
+
+.lb-controls{
+  padding: 1.25rem;
+}
+
+.lb-field-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.lb-field{
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+
+.lb-label{
+  color: var(--lb-text);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.lb-input,
+.lb-select{
+  width: 100%;
+  border: 1px solid var(--lb-border);
+  background: rgba(15,15,17,.75);
+  color: var(--lb-text);
+  border-radius: 14px;
+  padding: .85rem 1rem;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.lb-input::placeholder{
+  color: var(--lb-muted);
+}
+
+.lb-input:focus,
+.lb-select:focus{
+  border-color: rgba(212,175,55,.45);
+  box-shadow: 0 0 0 3px rgba(212,175,55,.10);
+}
+
+.lb-select{
+  appearance: none;
+}
+
+/* =================================
+   TAG FILTERS
+================================= */
+
+.lb-filter-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: .85rem;
+}
+
+.lb-filter-title{
+  color: var(--lb-text);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.lb-chip-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+
+.lb-chip.is-active{
+  border-color: rgba(212,175,55,.55);
+  color: var(--lb-text);
+  background: rgba(212,175,55,.12);
+  box-shadow: 0 0 0 1px rgba(212,175,55,.12);
+}
+
+/* =================================
+   RESULTS BAR
+================================= */
+
+.lb-results-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.lb-results-count{
+  color: var(--lb-muted);
+  font-size: .95rem;
+}
+
+/* =================================
+   DATABASE GRID
+================================= */
+
+.lb-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* =================================
+   WHISKEY CARDS
+================================= */
+
+.lb-whiskey-card{
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lb-kicker{
+  color: var(--lb-gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.lb-card-title{
+  color: var(--lb-text);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: .15rem 0 0;
+}
+
+.lb-card-subtitle{
+  color: var(--lb-muted);
+  font-size: .95rem;
+  margin-top: .2rem;
+}
+
+.lb-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.lb-meta span{
+  border: 1px solid var(--lb-border);
+  background: rgba(15,15,17,.45);
+  color: var(--lb-muted);
+  border-radius: 999px;
+  padding: .35rem .65rem;
+  font-size: .82rem;
+}
+
+.lb-copy{
+  color: var(--lb-muted);
+  line-height: 1.7;
+  font-size: .95rem;
+}
+
+.lb-copy strong{
+  color: var(--lb-text);
+}
+
+.lb-tag-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+/* =================================
+   EMPTY / ERROR STATES
+================================= */
+
+.lb-empty{
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--lb-muted);
+}
+
+.lb-empty strong{
+  color: var(--lb-text);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1023px) {
+  .lb-page{
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .lb-field-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lb-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lb-card {
+    scroll-margin-top: 96px;
+  }
+}
+
+@media (max-width: 640px) {
+  .lb-field-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .lb-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .lb-filter-head,
+  .lb-results-bar{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lb-controls{
+    padding: 1rem;
+  }
+
+  .lb-whiskey-card{
+    padding: 1rem;
+  }
+}
