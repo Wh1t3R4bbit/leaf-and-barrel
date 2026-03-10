@@ -6,95 +6,97 @@
   <title>Leaf & Barrel | Whiskey Database</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/index.html" class="logo">Leaf & Barrel</a>
+<body style="background: var(--lb-bg); color: var(--lb-text); margin: 0; font-family: Inter, system-ui, sans-serif;">
+  <header class="lb-nav" style="position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--lb-border);">
+    <div class="lb-page" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem;">
+      <a href="/index.html" style="display: inline-flex; align-items: center; gap: .65rem; color: var(--lb-text); text-decoration: none; font-weight: 700;">
+        <span class="lb-mark"></span>
+        <span>Leaf & Barrel</span>
+      </a>
 
-      <nav class="main-nav">
-        <a href="/index.html">Home</a>
-        <a href="/database.html">Cigars</a>
-        <a href="/whiskey.html" class="active">Whiskey</a>
+      <nav style="display: flex; flex-wrap: wrap; gap: .65rem;">
+        <a href="/index.html" class="lb-pill-btn" style="text-decoration: none;">Home</a>
+        <a href="/database.html" class="lb-pill-btn" style="text-decoration: none;">Cigars</a>
+        <a href="/whiskey.html" class="lb-pill-btn" style="text-decoration: none; border-color: rgba(212,175,55,.45);">Whiskey</a>
       </nav>
     </div>
   </header>
 
-  <main class="container whiskey-page">
-    <section class="page-hero">
-      <p class="eyebrow">Spirits Database</p>
-      <h1>Whiskey Explorer</h1>
-      <p class="page-intro">
+  <main class="lb-page">
+    <section class="lb-card lb-hero" style="padding: 2rem;">
+      <p class="lb-eyebrow">Spirits Database</p>
+      <h1 class="lb-title">Whiskey Explorer</h1>
+      <p class="lb-lead">
         Browse whiskeys by type, region, proof, flavor tags, and finish.
         Built for discovering bottles and future cigar pairings.
       </p>
     </section>
 
-    <section class="lb-card lb-controls">
-      <div class="control-group search-group">
-        <label for="whiskey-search">Search</label>
-        <input
-          type="text"
-          id="whiskey-search"
-          class="lb-input"
-          placeholder="Search by name, distillery, type, region, or tasting note..."
-        />
-      </div>
-
-      <div class="filter-row">
-        <div class="control-group">
-          <label for="filter-type">Type</label>
-          <select id="filter-type" class="lb-select">
-            <option value="">All Types</option>
-          </select>
+    <section class="lb-section">
+      <div class="lb-card lb-controls">
+        <div class="lb-field">
+          <label for="whiskey-search" class="lb-label">Search</label>
+          <input
+            type="text"
+            id="whiskey-search"
+            class="lb-input"
+            placeholder="Search by name, distillery, type, region, or tasting note..."
+          />
         </div>
 
-        <div class="control-group">
-          <label for="filter-country">Country</label>
-          <select id="filter-country">
-            <option value="">All Countries</option>
-          </select>
+        <div class="lb-field-grid">
+          <div class="lb-field">
+            <label for="filter-type" class="lb-label">Type</label>
+            <select id="filter-type" class="lb-select">
+              <option value="">All Types</option>
+            </select>
+          </div>
+
+          <div class="lb-field">
+            <label for="filter-country" class="lb-label">Country</label>
+            <select id="filter-country" class="lb-select">
+              <option value="">All Countries</option>
+            </select>
+          </div>
+
+          <div class="lb-field">
+            <label for="filter-region" class="lb-label">Region</label>
+            <select id="filter-region" class="lb-select">
+              <option value="">All Regions</option>
+            </select>
+          </div>
+
+          <div class="lb-field">
+            <label for="filter-proof" class="lb-label">Proof</label>
+            <select id="filter-proof" class="lb-select">
+              <option value="">All Proof Ranges</option>
+              <option value="low">Under 90</option>
+              <option value="mid">90–100</option>
+              <option value="high">101–115</option>
+              <option value="cask">116+</option>
+            </select>
+          </div>
         </div>
 
-        <div class="control-group">
-          <label for="filter-region">Region</label>
-          <select id="filter-region">
-            <option value="">All Regions</option>
-          </select>
+        <div class="lb-filter-head">
+          <span class="lb-filter-title">Flavor Tags</span>
+          <button id="clear-filters" type="button" class="lb-pill-btn">Clear Filters</button>
         </div>
 
-        <div class="control-group">
-          <label for="filter-proof">Proof</label>
-          <select id="filter-proof">
-            <option value="">All Proof Ranges</option>
-            <option value="low">Under 90</option>
-            <option value="mid">90–100</option>
-            <option value="high">101–115</option>
-            <option value="cask">116+</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="tag-filter-block">
-        <div class="tag-filter-header">
-          <span>Flavor Tags</span>
-          <button id="clear-filters" type="button" class="btn-secondary">Clear Filters</button>
-        </div>
-        <div id="tag-filters" class="tag-filter-list"></div>
+        <div id="tag-filters" class="lb-chip-row"></div>
       </div>
     </section>
 
-    <section class="results-toolbar">
-      <p id="results-count">Loading whiskeys...</p>
+    <section class="lb-results-bar">
+      <p id="results-count" class="lb-results-count">Loading whiskeys...</p>
     </section>
 
-    <section id="whiskey-results" class="whiskey-grid">
-      <!-- Cards render here -->
-    </section>
+    <section id="whiskey-results" class="lb-grid"></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Leaf & Barrel — Cigars, Spirits, and Pairings.</p>
+  <footer style="border-top: 1px solid var(--lb-border); margin-top: 2rem;">
+    <div class="lb-page" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
+      <p class="lb-copy" style="margin: 0;">Leaf & Barrel — Cigars, Spirits, and Pairings.</p>
     </div>
   </footer>
 
