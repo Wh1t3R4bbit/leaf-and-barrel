@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaf & Barrel | Whiskey Database</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/index.html" class="logo">Leaf & Barrel</a>
+
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/database.html">Cigars</a>
+        <a href="/whiskey.html" class="active">Whiskey</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container whiskey-page">
+    <section class="page-hero">
+      <p class="eyebrow">Spirits Database</p>
+      <h1>Whiskey Explorer</h1>
+      <p class="page-intro">
+        Browse whiskeys by type, region, proof, flavor tags, and finish.
+        Built for discovering bottles and future cigar pairings.
+      </p>
+    </section>
+
+    <section class="whiskey-controls card">
+      <div class="control-group search-group">
+        <label for="whiskey-search">Search</label>
+        <input
+          type="text"
+          id="whiskey-search"
+          placeholder="Search by name, distillery, type, region, or tasting note..."
+        />
+      </div>
+
+      <div class="filter-row">
+        <div class="control-group">
+          <label for="filter-type">Type</label>
+          <select id="filter-type">
+            <option value="">All Types</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="filter-country">Country</label>
+          <select id="filter-country">
+            <option value="">All Countries</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="filter-region">Region</label>
+          <select id="filter-region">
+            <option value="">All Regions</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="filter-proof">Proof</label>
+          <select id="filter-proof">
+            <option value="">All Proof Ranges</option>
+            <option value="low">Under 90</option>
+            <option value="mid">90–100</option>
+            <option value="high">101–115</option>
+            <option value="cask">116+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tag-filter-block">
+        <div class="tag-filter-header">
+          <span>Flavor Tags</span>
+          <button id="clear-filters" type="button" class="btn-secondary">Clear Filters</button>
+        </div>
+        <div id="tag-filters" class="tag-filter-list"></div>
+      </div>
+    </section>
+
+    <section class="results-toolbar">
+      <p id="results-count">Loading whiskeys...</p>
+    </section>
+
+    <section id="whiskey-results" class="whiskey-grid">
+      <!-- Cards render here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Leaf & Barrel — Cigars, Spirits, and Pairings.</p>
+    </div>
+  </footer>
+
+  <script src="/js/whiskey.js"></script>
+</body>
+</html>
